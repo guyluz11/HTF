@@ -1,8 +1,11 @@
-# Hackathon_Group_Finder
+# Hackathon_Team_Finder
 
 
-HGF = Hackathon/Hackerspace Group Finder
+
+
+HTF = Hackathon/Hackerspace Team Finder 
 
 OR different name
 
-HTF = Hackathon/Hackerspace Team Finder 
+
+HGF = Hackathon/Hackerspace Group Finder

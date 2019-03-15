@@ -1,7 +1,7 @@
-package worshifter.com.hgf.Activities;
+package workshifter.com.htf.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import worshifter.com.hgf.R;
+import workshifter.com.htf.R;
 
 import android.os.Bundle;
 

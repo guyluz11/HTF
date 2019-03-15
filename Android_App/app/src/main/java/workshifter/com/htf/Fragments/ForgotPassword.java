@@ -1,9 +1,9 @@
-package worshifter.com.hgf.Fragments;
+package workshifter.com.htf.Fragments;
 
 
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
-import worshifter.com.hgf.R;
+import workshifter.com.htf.R;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

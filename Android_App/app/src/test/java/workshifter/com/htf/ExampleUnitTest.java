@@ -1,4 +1,4 @@
-package worshifter.com.hgf;
+package workshifter.com.htf;
 
 import org.junit.Test;
 

@@ -1,10 +1,10 @@
-package worshifter.com.hgf.Fragments;
+package workshifter.com.htf.Fragments;
 
 
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
-import worshifter.com.hgf.R;
+import workshifter.com.htf.R;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -37,7 +37,7 @@ public class Login extends Fragment {
 
     private void constructViews() {        // initialize all the variables in an organized way
 
-        button = myView.findViewById(R.id.button);
+        button = myView.findViewById(R.id.loginButton_login);
 
     }
 }

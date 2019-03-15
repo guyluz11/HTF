@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/login"
-        android:name="worshifter.com.hgf.Fragments.Login"
+        android:name="workshifter.com.htf.Fragments.Login"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -19,12 +19,12 @@
     </fragment>
     <fragment
         android:id="@+id/forgotPassword"
-        android:name="worshifter.com.hgf.Fragments.ForgotPassword"
+        android:name="workshifter.com.htf.Fragments.ForgotPassword"
         android:label="fragment_forgot_password"
         tools:layout="@layout/fragment_forgot_password" />
     <fragment
         android:id="@+id/createNewAccount"
-        android:name="worshifter.com.hgf.Fragments.CreateNewAccount"
+        android:name="workshifter.com.htf.Fragments.CreateNewAccount"
         android:label="fragment_create_new_account"
         tools:layout="@layout/fragment_create_new_account" />
 </navigation>

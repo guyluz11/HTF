@@ -1,0 +1,38 @@
+apply plugin: 'com.android.library'
+// apply plugin: 'com.github.dcendents.android-maven'
+// group = 'com.github.DanGdl'
+
+android {
+    compileSdkVersion project.compile_ver
+
+    defaultConfig {
+        minSdkVersion project.min_ver
+        targetSdkVersion project.target_ver
+        versionCode project.ver_code
+        versionName "$project.ver_name"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation "androidx.annotation:annotation:$support_ver"
+    implementation "androidx.recyclerview:recyclerview:$support_ver"
+    implementation "androidx.appcompat:appcompat:$support_ver"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_ver"
+
+    // tests
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.2-alpha02'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0-alpha02'
+}

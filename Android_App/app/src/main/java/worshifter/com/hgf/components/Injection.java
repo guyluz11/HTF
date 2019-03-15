@@ -2,8 +2,8 @@ package worshifter.com.hgf.components;
 
 import worshifter.com.hgf.ui.example.ExampleActivityPresenter;
 import worshifter.com.hgf.ui.example.ExampleContract;
-import worshifter.com.hgf.ui.example.fr.ExampleFragmentContract;
-import worshifter.com.hgf.ui.example.fr.ExampleFragmentPresenter;
+import worshifter.com.hgf.ui.example.fr.example.ExampleFragmentContract;
+import worshifter.com.hgf.ui.example.fr.example.ExampleFragmentPresenter;
 
 public class Injection {
     private static ComponentProvider provider;

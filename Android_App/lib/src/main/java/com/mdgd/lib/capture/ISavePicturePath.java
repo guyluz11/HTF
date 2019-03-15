@@ -1,6 +1,6 @@
 package com.mdgd.lib.capture;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 /**
  * Created by Max

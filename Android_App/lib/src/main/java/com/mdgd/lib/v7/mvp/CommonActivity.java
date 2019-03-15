@@ -2,10 +2,6 @@ package com.mdgd.lib.v7.mvp;
 
 import android.annotation.TargetApi;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.mdgd.lib.R;
@@ -13,6 +9,11 @@ import com.mdgd.lib.contract.mvp.ActivityContract;
 import com.mdgd.lib.contract.progress.IProgressView;
 import com.mdgd.lib.contract.progress.ProgressDialogWrapper;
 import com.mdgd.lib.utilities.PermissionsUtil;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 /**
  * Created by Max
@@ -23,14 +24,7 @@ public abstract class CommonActivity<PRESENTER extends ActivityContract.IPresent
         implements ActivityContract.IView {
     private boolean hasProgress = true;
     private boolean onForeground = false;
-    public PRESENTER presenter;
     private IProgressView progress;
-
-    public CommonActivity(){
-        presenter = getPresenter();
-    }
-
-    protected abstract PRESENTER getPresenter();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -5,7 +5,8 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.os.Build;
-import android.support.v4.app.NotificationCompat;
+
+import androidx.core.app.NotificationCompat;
 
 /**
  * Created by Owner
@@ -14,8 +15,8 @@ import android.support.v4.app.NotificationCompat;
 public class ForegroundDelegate {
 
     public NotificationCompat.Builder setupServiceNotificationAndChannel(Context ctx, String channelName, String channelId,
-                                                                          int channelImportance, int notificationPriority,
-                                                                          int iconResId, int titleResId, int txtResId) {
+                                                                         int channelImportance, int notificationPriority,
+                                                                         int iconResId, int titleResId, int txtResId) {
         createNotificationChannel(ctx, channelName, channelId, channelImportance);
         final NotificationCompat.Builder builder = new NotificationCompat.Builder(ctx, channelId);
         builder.setAutoCancel(false);

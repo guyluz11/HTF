@@ -8,7 +8,8 @@ import com.mdgd.lib.contract.services.ServiceContract;
  * Created by Max
  * on 13/06/2018.
  */
-public abstract class CommonIntentService<T extends ServiceContract.IPresenter> extends IntentService implements ServiceContract.IService {
+public abstract class CommonIntentService<T extends ServiceContract.IPresenter> extends IntentService
+        implements ServiceContract.IService {
     protected final T presenter;
 
     public CommonIntentService(String name) {

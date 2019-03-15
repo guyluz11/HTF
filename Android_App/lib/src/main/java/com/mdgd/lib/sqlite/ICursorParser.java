@@ -2,7 +2,8 @@ package com.mdgd.lib.sqlite;
 
 import android.content.ContentValues;
 import android.database.Cursor;
-import android.support.annotation.NonNull;
+
+import androidx.annotation.NonNull;
 
 /**
  * Created by Max

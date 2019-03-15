@@ -1,21 +1,29 @@
 package worshifter.com.hgf.ui.example;
 
-import android.support.v4.app.Fragment;
+import android.os.Bundle;
 
 import com.mdgd.lib.v7.fragment.HostActivity;
 
-import worshifter.com.hgf.components.Injection;
-import worshifter.com.hgf.ui.example.fr.ExampleFragment;
+import javax.inject.Inject;
+
+import androidx.fragment.app.Fragment;
+import worshifter.com.hgf.ui.example.fr.example.ExampleFragment;
 
 public class ExampleActivity extends HostActivity<ExampleContract.IPresenter> implements ExampleContract.IView {
 
-    @Override
-    protected ExampleContract.IPresenter getPresenter() {
-        return Injection.getExamplePresenter(this);
-    }
+    @Inject
+    public ExampleContract.IPresenter presenter;
 
     @Override
     protected Fragment getFirstFragment() {
         return ExampleFragment.newInstance();
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        DaggerExampleActivityComponent.builder()
+                .exampleActivityModule(new ExampleActivityModule(this))
+                .build().injectPresenter(this);
     }
 }

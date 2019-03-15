@@ -1,4 +1,4 @@
-package worshifter.com.hgf.ui.example.fr;
+package worshifter.com.hgf.ui.example.fr.example;
 
 import com.mdgd.lib.v7.fragment.FragmentPresenter;
 

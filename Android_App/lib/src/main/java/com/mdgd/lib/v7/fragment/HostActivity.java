@@ -1,7 +1,6 @@
 package com.mdgd.lib.v7.fragment;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.View;
 
 import com.mdgd.lib.R;
@@ -9,6 +8,8 @@ import com.mdgd.lib.contract.mvp.ActivityContract;
 import com.mdgd.lib.v7.mvp.CommonActivity;
 
 import java.util.List;
+
+import androidx.fragment.app.Fragment;
 
 /**
  * Created by Max

@@ -1,12 +1,13 @@
 package com.mdgd.lib.v7.fragment.recycler;
 
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.mdgd.lib.R;
 import com.mdgd.lib.contract.fragment.FragmentContract;
 import com.mdgd.lib.recycler.CommonRecyclerAdapter;
 import com.mdgd.lib.v7.fragment.HostedFragment;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by Max

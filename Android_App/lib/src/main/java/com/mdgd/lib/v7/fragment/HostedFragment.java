@@ -3,10 +3,6 @@ package com.mdgd.lib.v7.fragment;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.CallSuper;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,23 +13,21 @@ import com.mdgd.lib.contract.progress.IProgressView;
 import com.mdgd.lib.contract.progress.ProgressDialogWrapper;
 import com.mdgd.lib.utilities.PermissionsUtil;
 
+import androidx.annotation.CallSuper;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 /**
  * Created by Max
  * on 19/07/2017.
  */
 
-public abstract class HostedFragment<PRESENTER extends FragmentContract.IPresenter, HOST extends FragmentContract.IHost> extends Fragment
-        implements FragmentContract.IView {
+public abstract class HostedFragment<PRESENTER extends FragmentContract.IPresenter, HOST extends FragmentContract.IHost>
+        extends Fragment implements FragmentContract.IView {
     private boolean hasProgress = false;
     private IProgressView progress;
-    protected PRESENTER presenter;
     protected HOST host;
-
-    public HostedFragment(){
-        presenter = getPresenter();
-    }
-
-    protected abstract PRESENTER getPresenter();
 
     @Override
     @SuppressWarnings("unchecked")

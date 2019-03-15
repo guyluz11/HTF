@@ -1,11 +1,12 @@
 package com.mdgd.lib.v7.fragment.recycler;
 
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 
 import com.mdgd.lib.R;
 import com.mdgd.lib.contract.fragment.FragmentContract;
 import com.mdgd.lib.contract.progress.IProgressView;
+
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 /**
  * Created by Max

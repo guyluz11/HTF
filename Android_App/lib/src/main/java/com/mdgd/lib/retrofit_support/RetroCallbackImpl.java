@@ -1,10 +1,9 @@
 package com.mdgd.lib.retrofit_support;
 
-import android.support.annotation.NonNull;
-
 import com.mdgd.lib.result.ICallback;
 import com.mdgd.lib.result.Result;
 
+import androidx.annotation.NonNull;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

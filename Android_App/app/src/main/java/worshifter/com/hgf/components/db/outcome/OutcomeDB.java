@@ -3,10 +3,10 @@ package worshifter.com.hgf.components.db.outcome;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.support.annotation.NonNull;
 
 import com.mdgd.lib.sqlite.BasicDataBase;
 
+import androidx.annotation.NonNull;
 import worshifter.com.hgf.dto.Outcome;
 
 public class OutcomeDB extends BasicDataBase<OutcomeDBH, Outcome> {

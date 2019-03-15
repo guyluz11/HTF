@@ -1,6 +1,17 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
+    ext.support_ver = '1.1.0-alpha03'
+    ext.gcm_ver = '16.0.0'
+    ext.retrofit_ver = '2.4.0'
+
+    project.ext {
+        min_ver = 17
+        target_ver = 28
+        compile_ver = 28
+        ver_code = 1
+        ver_name = '1.0'
+    }
     repositories {
         google()
         jcenter()

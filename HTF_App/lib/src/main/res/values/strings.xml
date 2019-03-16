@@ -1,5 +1,0 @@
-<resources>
-    <string name="app_name">lib</string>
-    <string name="select_image" translatable="false">Select image</string>
-    <string name="no_camera_on_device" translatable="false">No camera on device</string>
-</resources>

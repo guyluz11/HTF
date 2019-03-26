@@ -54,18 +54,20 @@ dependencies {
     implementation 'com.google.dagger:dagger:2.16'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.16'
 
-    // firebase
-    implementation "com.google.firebase:firebase-core:16.0.8"
+    // fire base core
+    implementation 'com.google.firebase:firebase-core:16.0.8'
     // auth with phone
     implementation "com.google.firebase:firebase-auth:16.2.0"
     // icon storage
     implementation "com.google.firebase:firebase-storage:16.1.0"
     // db
     implementation "com.google.firebase:firebase-firestore:18.1.0"
+
     // fcm
-    implementation "com.google.firebase:firebase-messaging:17.4.0"
-    // invites
-    implementation "com.google.firebase:firebase-invites:16.1.1"
+    implementation "com.google.firebase:firebase-messaging:17.5.0"
+    // invitescompile
+   // implementation "com.google.firebase:firebase-invites:16.1.1"
+
     // real_time presence
     implementation "com.google.firebase:firebase-database:16.1.0"
 
@@ -80,3 +82,6 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.1.2-alpha02'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0-alpha02'
 }
+
+// For fire base
+apply plugin: 'com.google.gms.google-services'

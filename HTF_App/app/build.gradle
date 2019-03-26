@@ -20,7 +20,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    lintOptions{
+    lintOptions {
         disable 'GoogleAppIndexingWarning'
     }
 }
@@ -54,6 +54,26 @@ dependencies {
     implementation 'com.google.dagger:dagger:2.16'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.16'
 
+    // firebase
+    implementation "com.google.firebase:firebase-core:16.0.8"
+    // auth with phone
+    implementation "com.google.firebase:firebase-auth:16.2.0"
+    // icon storage
+    implementation "com.google.firebase:firebase-storage:16.1.0"
+    // db
+    implementation "com.google.firebase:firebase-firestore:18.1.0"
+    // fcm
+    implementation "com.google.firebase:firebase-messaging:17.4.0"
+    // invites
+    implementation "com.google.firebase:firebase-invites:16.1.1"
+    // real_time presence
+    implementation "com.google.firebase:firebase-database:16.1.0"
+
+    // country code picker
+    implementation 'com.github.joielechong:countrycodepicker:2.2.0'
+
+    // phone validator
+    implementation 'io.michaelrocks:libphonenumber-android:8.9.14'
 
     // tests
     testImplementation 'junit:junit:4.12'

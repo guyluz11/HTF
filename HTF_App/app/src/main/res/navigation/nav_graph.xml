@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/login"
-        android:name="com.htf.Fragments.Login"
+        android:name="com.htf.ui.Fragments.Login"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -26,17 +26,17 @@
     </fragment>
     <fragment
         android:id="@+id/forgotPassword"
-        android:name="com.htf.Fragments.ForgotPassword"
+        android:name="com.htf.ui.Fragments.ForgotPassword"
         android:label="fragment_forgot_password"
         tools:layout="@layout/fragment_forgot_password" />
     <fragment
         android:id="@+id/createNewAccount"
-        android:name="com.htf.Fragments.CreateNewAccount"
+        android:name="com.htf.ui.Fragments.CreateNewAccount"
         android:label="fragment_create_new_account"
         tools:layout="@layout/fragment_create_new_account" />
     <fragment
         android:id="@+id/blankFragment"
-        android:name="com.htf.Fragments.BlankFragment"
+        android:name="com.htf.ui.Fragments.BlankFragment"
         android:label="fragment_blank"
         tools:layout="@layout/fragment_blank" />
 </navigation>

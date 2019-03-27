@@ -1,4 +1,4 @@
-package com.htf.Fragments;
+package com.htf.ui.Fragments;
 
 
 import android.os.Bundle;

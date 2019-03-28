@@ -2,13 +2,23 @@
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
         <item
-            android:id="@+id/action_hackathonGroups_to_chat"
+            android:id="@+id/action_to_home_m"
             android:icon="@drawable/flag_iceland"
             android:enabled="true"
-            android:title="Home Screen" />
+            android:title="Home" />
         <item
-            android:id="@+id/chat"
+            android:id="@+id/action_to_chat_m"
             android:icon="@drawable/round_button"
             android:enabled="true"
-            android:title="Chat is here" />
+            android:title="Chat" />
+        <item
+            android:id="@+id/action_to_account_m"
+            android:icon="@drawable/flag_iceland"
+            android:enabled="true"
+            android:title="Account" />
+        <item
+            android:id="@+id/action_to_bookMark_m"
+            android:icon="@drawable/round_button"
+            android:enabled="true"
+            android:title="Book Mark" />
 </menu>

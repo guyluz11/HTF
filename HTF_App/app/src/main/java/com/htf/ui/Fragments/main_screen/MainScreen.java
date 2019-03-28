@@ -27,35 +27,31 @@ public class MainScreen extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         myView = inflater.inflate(R.layout.fragment_main_screen, container, false);
         constructViews();
 
-        //TODO: Change this to work correctly and not with title names Add link of example (In kotlin)
-        // https://codelabs.developers.google.com/codelabs/android-navigation/#1
-        //
-        // lines in kotlin
-        // val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_nav_view)
-        // bottomNav?.setupWithNavController(navController)
 
-        bottomNavView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getTitle().toString()){
-                    case "Home Screen":
-//                        NavigationUI.setupActionBarWithNavController(bottomNavView);
-                        Navigation.findNavController(fragment).navigate(R.id.action_chat_to_hackathonGroups);       // Change to Customer menu Screen b
+        bottomNavView = myView.findViewById(R.id.bottomNavView);
+        bottomNavView.setOnNavigationItemSelectedListener((@NonNull MenuItem menuItem) -> {
+
+                switch (menuItem.getItemId()){
+                    case R.id.action_to_home_m:
+                        Navigation.findNavController(fragment).navigate(R.id.action_to_home);       // Change to Customer menu Screen b
                         break;
-                    case "Chat is here":
-                        Navigation.findNavController(fragment).navigate(R.id.action_hackathonGroups_to_chat);       // Change to Customer menu Screen
+                    case R.id.action_to_chat_m:
+                        Navigation.findNavController(fragment).navigate(R.id.action_to_chat);       // Change to Customer menu Screen
                         break;
-                    case "":
-                        break;
+                     case R.id.action_to_account_m:
+                            Navigation.findNavController(fragment).navigate(R.id.action_to_account);       // Change to Customer menu Screen
+                            break;
+                     case R.id.action_to_bookMark_m:
+                            Navigation.findNavController(fragment).navigate(R.id.action_to_bookMark);       // Change to Customer menu Screen
+                            break;
                 }
                 return true;
-            }
         });
         return myView;
     }

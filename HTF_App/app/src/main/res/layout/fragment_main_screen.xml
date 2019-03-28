@@ -22,9 +22,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@color/buttonColor"
+        android:background="@color/white"
         android:foreground="?attr/selectableItemBackground"
-        app:itemBackground="@color/buttonColor"
         app:itemIconTint="@drawable/bottom_menu_item_selector"
         app:itemTextColor="@drawable/bottom_menu_item_selector"
         app:menu="@menu/bottom_navigation_menu" />

@@ -26,4 +26,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 }

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/login"
-        android:name="com.htf.ui.Fragments.Login"
+        android:name="com.htf.ui.Fragments.login.Login"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -21,22 +21,22 @@
             app:enterAnim="@anim/nav_default_enter_anim"
             app:popEnterAnim="@anim/nav_default_enter_anim" />
         <action
-            android:id="@+id/action_login_to_blankFragment"
-            app:destination="@id/blankFragment" />
+            android:id="@+id/action_login_to_mainScreen"
+            app:destination="@id/mainScreen" />
     </fragment>
     <fragment
         android:id="@+id/forgotPassword"
-        android:name="com.htf.ui.Fragments.ForgotPassword"
+        android:name="com.htf.ui.Fragments.forgot_password.ForgotPassword"
         android:label="fragment_forgot_password"
         tools:layout="@layout/fragment_forgot_password" />
     <fragment
         android:id="@+id/createNewAccount"
-        android:name="com.htf.ui.Fragments.CreateNewAccount"
+        android:name="com.htf.ui.Fragments.create_new_account.CreateNewAccount"
         android:label="fragment_create_new_account"
         tools:layout="@layout/fragment_create_new_account" />
     <fragment
-        android:id="@+id/blankFragment"
-        android:name="com.htf.ui.Fragments.BlankFragment"
-        android:label="fragment_blank"
-        tools:layout="@layout/fragment_blank" />
+        android:id="@+id/mainScreen"
+        android:name="com.htf.ui.Fragments.main_screen.MainScreen"
+        android:label="fragment_main_screen"
+        tools:layout="@layout/fragment_main_screen" />
 </navigation>

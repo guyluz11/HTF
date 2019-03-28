@@ -1,4 +1,4 @@
-package com.htf.ui.Fragments;
+package com.htf.ui.Fragments.login;
 
 
 import android.os.Bundle;
@@ -27,7 +27,7 @@ public class Login extends Fragment {
         constructViews();
 
 
-        button.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_login_to_createNewAccount, null));  // only to change page
+        button.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_login_to_mainScreen, null));  // only to change page
         forgotPassword.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_login_to_forgotPassword, null));  // only to change page
 
         newAccount.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_login_to_createNewAccount, null));  // only to change page

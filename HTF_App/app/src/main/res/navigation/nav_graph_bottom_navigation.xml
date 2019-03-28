@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_bottom_navigation"
+    app:startDestination="@id/hackathonGroups">
+
+    <fragment
+        android:id="@+id/hackathonGroups"
+        android:name="com.htf.ui.Fragments.hackaton_groups.HackathonGroups"
+        android:label="fragment_hackathon_groups"
+        tools:layout="@layout/fragment_hackathon_groups" >
+        <action
+            android:id="@+id/action_hackathonGroups_to_chat"
+            app:destination="@id/chat"
+            app:enterAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/chat"
+        android:name="com.htf.ui.Fragments.chat.Chat"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" >
+        <action
+            android:id="@+id/action_chat_to_hackathonGroups"
+            app:destination="@id/hackathonGroups"
+            app:enterAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left" />
+    </fragment>
+</navigation>

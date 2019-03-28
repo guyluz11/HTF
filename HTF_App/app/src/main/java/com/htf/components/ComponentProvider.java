@@ -30,7 +30,7 @@ public class ComponentProvider extends BasicProvider implements IComponentProvid
 
     @Override
     public INetwork getNetwork() {
-        networkRef = checkIfExists(networkRef, NetworkImpl::new);
+        networkRef = checkIfExists(networkRef, () -> new NetworkImpl(appCtx));
         return networkRef.get();
     }
 

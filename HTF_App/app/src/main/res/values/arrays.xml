@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="skills">
+        <item>@string/skill_1</item>
+        <item>@string/skill_2</item>
+        <item>@style/skill_3</item>
+    </string-array>
+    <string-array name="dbs">
+        <item>@string/users_db</item>
+    </string-array>
+
+</resources>

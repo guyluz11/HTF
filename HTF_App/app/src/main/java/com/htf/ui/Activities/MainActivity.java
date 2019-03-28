@@ -1,20 +1,15 @@
-package com.htf.ui.Activities;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.htf.R;
-
 import android.os.Bundle;
-import android.util.Log;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.google.firebase.auth.FirebaseAuth;
+import com.htf.R;
+import com.htf.components.Injection;
+import com.htf.dto.User;
+import com.htf.lib.result.Result;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,33 +18,52 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        AddDataToDb();
+        //createNewUserPushToDB();
+        loginUserAndGetUserObject();
     }
 
+    private void loginUserAndGetUserObject() {
+        User user;
+        // login user that already exist and ger User Object from database
+        Injection.getProvider().getNetwork().loginUser("nivsaparov@gmail.com","123456789", result -> {
+            // get user object
+            String id = FirebaseAuth.getInstance().getCurrentUser().getUid();
+            Injection.getProvider().getNetwork().getUser(id, (Result<List<User>> result1) -> {
+                populateUser(result1.data);
+            });
+        });
+    }
 
-    private void AddDataToDb(){
-        // Testing adding data to db
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        // Create a new user with a first and last name
-        Map<String, Object> user = new HashMap<>();
-        user.put("first", "Ada");
-        user.put("last", "Lovelace");
-        user.put("born", 1815);
+    private User populateUser(List<User> data) {
+        return data.isEmpty() ? null : data.get(0);
+    }
 
-// Add a new document with a generated ID
-        db.collection("users")
-                .add(user)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w(TAG, "Error adding document", e);
-                    }
-                });
+    /**
+     * this func used when new user register, its update Auth DB, User DB
+     */
+    private void createNewUserPushToDB(){
+        // inject user auth for sign in with email and password push for db
+        /*
+
+
+            registerAuthUser();
+
+
+         */
+
+        // after user logged in we need to push the User object to DB
+
+        User user;
+        ArrayList<String> skills = new ArrayList<>();
+        skills.add("cdasca");
+        skills.add("cdasca");
+        skills.add("cdasca");
+
+        // the uid key i put is just some key of a user i took from the firebase
+        user = new User("oIxDNGoE9FgtxBGpFDpo2lnM9gK2");
+
+        Injection.getProvider().getNetwork().updateUser(user, result -> {
+            System.out.println();
+        });
     }
 }

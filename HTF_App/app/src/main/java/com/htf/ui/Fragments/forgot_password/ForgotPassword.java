@@ -1,4 +1,4 @@
-package com.htf.Fragments;
+package com.htf.ui.Fragments.forgot_password;
 
 
 import android.os.Bundle;

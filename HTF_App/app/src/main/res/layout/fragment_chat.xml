@@ -3,14 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.Fragments.blank_fragment.BlankFragment">
+    tools:context=".ui.Fragments.chat.Chat">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/userNameTextView_blankFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:text="I am the second fragment" />
+
 </FrameLayout>
-
-

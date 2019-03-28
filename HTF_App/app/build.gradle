@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
 
 android {
     compileSdkVersion 28
@@ -54,22 +56,25 @@ dependencies {
     implementation 'com.google.dagger:dagger:2.16'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.16'
 
-    // fire base core
+    // firebase core
     implementation 'com.google.firebase:firebase-core:16.0.8'
-    // auth with phone
+    // firebase auth with phone
     implementation "com.google.firebase:firebase-auth:16.2.0"
-    // icon storage
+    // firebase icon storage
     implementation "com.google.firebase:firebase-storage:16.1.0"
-    // db
+    // firebase db
     implementation "com.google.firebase:firebase-firestore:18.1.0"
 
-    // fcm
+    // firebase
     implementation "com.google.firebase:firebase-messaging:17.5.0"
-    // invitescompile
-   // implementation "com.google.firebase:firebase-invites:16.1.1"
+    // firebase invitescompile
+    // implementation "com.google.firebase:firebase-invites:16.1.1"
 
-    // real_time presence
+    // firebase real_time presence
     implementation "com.google.firebase:firebase-database:16.1.0"
+
+    // firebase for Crashlytics
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.9.9'
 
     // country code picker
     implementation 'com.github.joielechong:countrycodepicker:2.2.0'
@@ -81,6 +86,8 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.2-alpha02'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0-alpha02'
+    implementation 'com.google.android.material:material:1.0.0'
+
 }
 
 // For fire base

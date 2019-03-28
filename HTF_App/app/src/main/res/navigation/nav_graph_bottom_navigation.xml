@@ -5,26 +5,89 @@
     android:id="@+id/nav_graph_bottom_navigation"
     app:startDestination="@id/hackathonGroups">
 
-    <fragment
-        android:id="@+id/hackathonGroups"
-        android:name="com.htf.ui.Fragments.hackaton_groups.HackathonGroups"
-        android:label="fragment_hackathon_groups"
-        tools:layout="@layout/fragment_hackathon_groups" >
-        <action
-            android:id="@+id/action_hackathonGroups_to_chat"
-            app:destination="@id/chat"
-            app:enterAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_right" />
-    </fragment>
+
     <fragment
         android:id="@+id/chat"
         android:name="com.htf.ui.Fragments.chat.Chat"
         android:label="fragment_chat"
         tools:layout="@layout/fragment_chat" >
         <action
-            android:id="@+id/action_chat_to_hackathonGroups"
-            app:destination="@id/hackathonGroups"
-            app:enterAnim="@anim/slide_out_right"
-            app:popEnterAnim="@anim/slide_in_left" />
+            android:id="@+id/action_to_chat"
+            app:destination="@id/chat" />
+        <action
+            android:id="@+id/action_to_account"
+            app:destination="@id/account" />
+        <action
+            android:id="@+id/action_to_bookMark"
+            app:destination="@id/bookMark" />
+        <action
+            android:id="@+id/action_to_home"
+            app:destination="@id/hackathonGroups" />
+    </fragment>
+    <fragment
+        android:id="@+id/account"
+        android:name="com.htf.ui.Fragments.account.Account"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_account" >
+        <action
+            android:id="@+id/action_to_account"
+            app:destination="@id/account" />
+        <action
+            android:id="@+id/fragment_to_home"
+            app:destination="@id/home" />
+        <action
+            android:id="@+id/action_to_chat"
+            app:destination="@id/chat" />
+        <action
+            android:id="@+id/action_to_bookMark"
+            app:destination="@id/bookMark" />
+        <action
+            android:id="@+id/action_account_to_hackathonGroups"
+            app:destination="@id/hackathonGroups" />
+        <action
+            android:id="@+id/action_to_home"
+            app:destination="@id/hackathonGroups" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookMark"
+        android:name="com.htf.ui.Fragments.book_mark.BookMark"
+        android:label="fragment_book_mark"
+        tools:layout="@layout/fragment_book_mark" >
+        <action
+            android:id="@+id/action_to_bookMark"
+            app:destination="@id/bookMark" />
+        <action
+            android:id="@+id/fragment_to_home"
+            app:destination="@id/home" />
+        <action
+            android:id="@+id/action_to_account"
+            app:destination="@id/account" />
+        <action
+            android:id="@+id/action_to_chat"
+            app:destination="@id/chat" />
+        <action
+            android:id="@+id/action_to_home"
+            app:destination="@id/hackathonGroups" />
+    </fragment>
+    <fragment
+        android:id="@+id/hackathonGroups"
+        android:name="com.htf.ui.Fragments.hackaton_groups.HackathonGroups"
+        android:label="fragment_hackathon_groups"
+        tools:layout="@layout/fragment_hackathon_groups" >
+        <action
+            android:id="@+id/action_to_home"
+            app:destination="@id/hackathonGroups" />
+
+        <action
+            android:id="@+id/action_to_chat"
+            app:destination="@id/chat"
+            app:enterAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right" />
+        <action
+            android:id="@+id/action_to_account"
+            app:destination="@id/account" />
+        <action
+            android:id="@+id/action_to_bookMark"
+            app:destination="@id/bookMark" />
     </fragment>
 </navigation>

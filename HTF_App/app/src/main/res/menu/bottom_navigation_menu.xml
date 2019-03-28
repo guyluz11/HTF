@@ -12,13 +12,14 @@
             android:enabled="true"
             android:title="Chat" />
         <item
+            android:id="@+id/action_to_bookMark_m"
+            android:icon="@drawable/ic_round_bookmark_24px"
+            android:enabled="true"
+            android:title="Bookmark" />
+        <item
             android:id="@+id/action_to_account_m"
             android:icon="@drawable/ic_round_account_circle_24px"
             android:enabled="true"
             android:title="Account" />
-        <item
-            android:id="@+id/action_to_bookMark_m"
-            android:icon="@drawable/ic_round_bookmark_24px"
-            android:enabled="true"
-            android:title="Book Mark" />
+
 </menu>

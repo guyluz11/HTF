@@ -29,7 +29,6 @@ public class Login extends Fragment {
 
         button.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_login_to_mainScreen, null));  // only to change page
         forgotPassword.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_login_to_forgotPassword, null));  // only to change page
-
         newAccount.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_login_to_createNewAccount, null));  // only to change page
 
 
@@ -40,7 +39,6 @@ public class Login extends Fragment {
 
 
     private void constructViews() {        // initialize all the variables in an organized way
-
         button = myView.findViewById(R.id.loginButton_login);
         forgotPassword = myView.findViewById(R.id.forgotPasswordTextView_login);
         newAccount = myView.findViewById(R.id.createNewAccountTextView_login);

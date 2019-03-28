@@ -1,3 +1,5 @@
+package com.htf.ui.Activities;
+
 import android.os.Bundle;
 
 import com.google.firebase.auth.FirebaseAuth;

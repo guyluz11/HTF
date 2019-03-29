@@ -3,8 +3,6 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
 
-        <!-- App Font -->
-        <item name="android:fontFamily">@font/gidole_regular</item>
 
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -12,4 +10,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="BtnStyle">
+        <item name="android:background">@drawable/pink_to_blue</item>
+    </style>
 </resources>

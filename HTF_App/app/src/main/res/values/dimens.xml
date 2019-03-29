@@ -1,1 +1,4 @@
-<resources></resources>
+<resources>
+    <dimen name="pencil_size">14dp</dimen>
+    <dimen name="hackathon_list_height">132dp</dimen>
+</resources>

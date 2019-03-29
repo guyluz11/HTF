@@ -3,13 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/login">
+    app:startDestination="@id/splashFragment2">
 
     <fragment
         android:id="@+id/login"
-        android:name="com.htf.ui.Fragments.login.LoginFragment"
+        android:name="com.htf.ui.main.fr.login.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
+        tools:layout="@layout/fragment_login">
+
         <action
             android:id="@+id/action_login_to_forgotPassword"
             app:destination="@id/forgotPassword"
@@ -23,26 +24,36 @@
         <action
             android:id="@+id/action_login_to_mainScreen"
             app:destination="@id/mainScreen" />
+
     </fragment>
+
     <fragment
         android:id="@+id/forgotPassword"
-        android:name="com.htf.ui.Fragments.forgot_password.ForgotPassword"
+        android:name="com.htf.ui.main.fr.forgot_password.ForgotPassword"
         android:label="fragment_forgot_password"
         tools:layout="@layout/fragment_forgot_password" />
     <fragment
         android:id="@+id/createNewAccount"
-        android:name="com.htf.ui.Fragments.create_new_account.CreateNewAccount"
+        android:name="com.htf.ui.main.fr.create_new_account.CreateNewAccount"
         android:label="fragment_create_new_account"
         tools:layout="@layout/fragment_create_new_account" />
     <fragment
         android:id="@+id/mainScreen"
-        android:name="com.htf.ui.Fragments.main_screen.MainScreen"
+        android:name="com.htf.ui.main.fr.main_screen.MainScreen"
         android:label="fragment_main_screen"
-        tools:layout="@layout/fragment_main_screen" >
-        <argument
-            android:name="what screen to go to"
-            app:argType="string"
-            app:nullable="true"
-            android:defaultValue="HOME" />
+        tools:layout="@layout/fragment_main_screen" />
+    <fragment
+        android:id="@+id/splashFragment2"
+        android:name="com.htf.ui.main.fr.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment2_to_mainScreen"
+            app:destination="@id/mainScreen" />
+        <action
+            android:id="@+id/action_splashFragment2_to_login"
+            app:destination="@id/login" />
+
     </fragment>
+
 </navigation>

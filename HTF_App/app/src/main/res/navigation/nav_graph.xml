@@ -48,5 +48,18 @@
         android:id="@+id/splashFragment"
         android:name="com.htf.ui.main.fr.splash.SplashFragment"
         android:label="fragment_profession"
-        tools:layout="@layout/fragment_profession" />
+        tools:layout="@layout/fragment_profession" >
+        <action
+            android:id="@+id/action_splashFragment_to_skillsFragment"
+            app:destination="@id/skillsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/skillsFragment"
+        android:name="com.htf.ui.main.fr.skills.SkillsFragment"
+        android:label="fragment_skills"
+        tools:layout="@layout/fragment_skills" >
+        <action
+            android:id="@+id/action_skillsFragment_to_mainScreen"
+            app:destination="@id/mainScreen" />
+    </fragment>
 </navigation>

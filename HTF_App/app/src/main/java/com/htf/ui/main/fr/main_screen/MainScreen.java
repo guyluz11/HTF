@@ -44,8 +44,6 @@ public class MainScreen extends HostedFragment<HomeFragmentContract.IPresenter, 
     @Override
     public void onStart() {
         super.onStart();
-        navigateToInterestsScreen();
-
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
@@ -58,14 +56,6 @@ public class MainScreen extends HostedFragment<HomeFragmentContract.IPresenter, 
         }, 15000);
 
 
-
-    }
-
-    private void navigateToInterestsScreen() {
-        if (presenter.goToUserSkills()) {
-            System.out.println("there is value to the prefs");
-            Navigation.findNavController(getView()).navigate(R.id.account);
-        }
 
     }
 

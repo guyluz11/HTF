@@ -30,8 +30,8 @@ public class User {
         mLastName = "Sap412321arov";
         mHackathons = new HashMap<>();
         addHackathon("115515", "543");
-        addHackathon("2", "2432");
-        addHackathon("3", "1321");
+        addHackathon("my_img_t", "2432");
+        addHackathon("my_img_tree", "1321");
         mSkills = new ArrayList<String>();
         mSkills.add("skill1");
         mSkills.add("skill2");

@@ -11,7 +11,7 @@ import com.htf.ui.main.fr.login.LoginFragmentContract;
 import javax.inject.Inject;
 
 public class MainActivity extends HostActivity<MainContract.IPresenter> implements MainContract.IView,
-        LoginFragmentContract.IHost, AccountFragmentContract.IHost {
+        LoginFragmentContract.IHost, AccountFragmentContract.IHost{
 
     @Inject
     public MainContract.IPresenter presenter;

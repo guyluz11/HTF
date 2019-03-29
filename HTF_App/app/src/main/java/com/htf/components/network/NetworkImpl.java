@@ -15,7 +15,6 @@ import com.htf.lib.result.ICallback;
 import com.htf.lib.result.Result;
 import com.htf.lib.retrofit_support.BasicNetwork;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -30,23 +29,17 @@ public class NetworkImpl extends BasicNetwork implements INetwork {
         this.appCtx = appCtx;
     }
 
-    @Override
-    public void addUser(String name, String secondName, int year, ICallback<String> callback) {
-
-    }
 
     public boolean isSignedIn() {
         return FirebaseAuth.getInstance().getCurrentUser() != null;
     }
 
-    public void register(String userName, String password, String fullName, ICallback<String> callback) {
+    public void register(String userName, String password, ICallback<String> callback) {
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(userName, password)
                 .addOnCompleteListener((@NonNull Task<AuthResult> task) -> {
                     if (task.isSuccessful()) {
-                        addInitialUserDocument(userName, fullName, callback);
+                        callback.onResult(new Result<>("success"));
                     } else {
-                        // exec callback
-                        //todo check how to pass false calback if i must evter string (even if empty)
                         callback.onResult(new Result<>(task.getException()));
                     }
                 });
@@ -82,7 +75,7 @@ public class NetworkImpl extends BasicNetwork implements INetwork {
 
     /**
      * Create new / override current user
-     */
+     *
     @Override
     public void updateUser(String firstname, String lastname, ArrayList<String> skills, ICallback<Boolean> callback) {
         FirebaseFirestore.getInstance().collection("users").add(new User(firstname, lastname, skills))
@@ -137,14 +130,16 @@ public class NetworkImpl extends BasicNetwork implements INetwork {
 
     /**
      * Init User database
-     */
+     *
     @Override
     public void initUserDB() {
         FirebaseFirestore.getInstance().collection(appCtx.getString(R.string.users_db)).add(new User("123456"))
                 .addOnCompleteListener((@NonNull Task<DocumentReference> task1) -> {
                     System.out.println();
                 });
-    }
+    }*/
+
+
 
     @Override
     public void loadHackathons(String userId, ICallback<List<Hackathon>> callback) {

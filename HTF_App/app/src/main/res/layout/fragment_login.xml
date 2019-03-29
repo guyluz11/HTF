@@ -43,7 +43,7 @@
         android:layout_marginTop="8dp"
         android:textColorHint="@color/Login_texts"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/emaillEditTextContainer_login1"
+        app:layout_constraintBottom_toTopOf="@+id/passwordEditTextContainer_login"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toTopOf="@+id/guideline"
@@ -62,29 +62,6 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/emaillEditTextContainer_login1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:textColorHint="@color/Login_texts"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/passwordEditTextContainer_login"
-        app:layout_constraintEnd_toStartOf="@+id/guideline4"
-        app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toBottomOf="@+id/emaillEditTextContainer_login">
-
-        <EditText
-            android:id="@+id/name_textView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:backgroundTint="@color/Login_texts"
-            android:hint="@string/enter_your_name"
-            android:inputType="textWebEmailAddress"
-            android:textColor="@color/Login_texts" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/passwordEditTextContainer_login"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -94,7 +71,7 @@
         app:layout_constraintBottom_toTopOf="@+id/loginButton_login"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toBottomOf="@+id/emaillEditTextContainer_login1">
+        app:layout_constraintTop_toBottomOf="@+id/emaillEditTextContainer_login">
 
         <EditText
             android:id="@+id/password_textView"

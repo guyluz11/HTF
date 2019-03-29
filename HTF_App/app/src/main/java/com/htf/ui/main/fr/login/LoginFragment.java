@@ -20,7 +20,7 @@ public class LoginFragment extends HostedFragment<LoginFragmentContract.IPresent
         LoginFragmentContract.IHost> implements LoginFragmentContract.IView, View.OnClickListener {
 
     private Button loginButton;
-    private TextView gotAccount, email, name, password;
+    private TextView gotAccount, email, password;
 
 
     public static LoginFragment newInstance() {
@@ -49,7 +49,6 @@ public class LoginFragment extends HostedFragment<LoginFragmentContract.IPresent
         loginButton = v.findViewById(R.id.loginButton_login);
         gotAccount = v.findViewById(R.id.already_have_account_textView);
         email = v.findViewById(R.id.email_textView);
-        name = v.findViewById(R.id.name_textView);
         password = v.findViewById(R.id.password_textView);
 
         loginButton.setOnClickListener(this);//Navigation.createNavigateOnClickListener(R.id.action_login_to_mainScreen, null));  // only to change page
@@ -66,7 +65,7 @@ public class LoginFragment extends HostedFragment<LoginFragmentContract.IPresent
     public void onClick(View v) {
         if (v == loginButton) {
             //login the user
-            presenter.registerUser(getText(email), getText(password), getText(name));
+            presenter.registerUser(getText(email), getText(password));
         } else if (v == gotAccount) {
             presenter.login(getText(email), getText(password));
         }
@@ -80,7 +79,6 @@ public class LoginFragment extends HostedFragment<LoginFragmentContract.IPresent
     public void setValidationResult(ValidationResult validation) {
         email.setError(validation.getEmailMsg());
         password.setError(validation.getPasswordMsg());
-        name.setError(validation.getNameMsg());
     }
 
     @Override

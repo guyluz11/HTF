@@ -7,13 +7,18 @@ import com.htf.R;
 import com.htf.components.Injection;
 import com.htf.dto.User;
 import com.htf.lib.result.Result;
+import com.htf.lib.v7.fragment.HostActivity;
+import com.htf.ui.main.MainContract;
+import com.htf.ui.main.fr.login.LoginFragmentContract;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends HostActivity<MainContract.IPresenter> implements MainContract.IView,
+        LoginFragmentContract.IHost {
 
     private String TAG = "GO";
 
@@ -23,6 +28,26 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //createNewUserPushToDB();
         loginUserAndGetUserObject();
+    }
+
+    @Override
+    protected void addFirstFragment() {
+        super.addFirstFragment();
+    }
+
+    @Override
+    protected void restoreFragments(List<Fragment> fragments) {
+        super.restoreFragments(fragments);
+    }
+
+    @Override
+    protected int getLayoutResId() {
+        return super.getLayoutResId();
+    }
+
+    @Override
+    protected Fragment getFirstFragment() {
+        return super.getFirstFragment();
     }
 
     private void loginUserAndGetUserObject() {
@@ -36,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
             });
         });
     }
+
 
     private User populateUser(List<User> data) {
         return data.isEmpty() ? null : data.get(0);

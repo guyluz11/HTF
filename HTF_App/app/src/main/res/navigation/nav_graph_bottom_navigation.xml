@@ -33,9 +33,6 @@
             android:id="@+id/action_to_account"
             app:destination="@id/account" />
         <action
-            android:id="@+id/fragment_to_home"
-            app:destination="@id/home" />
-        <action
             android:id="@+id/action_to_chat"
             app:destination="@id/chat" />
         <action
@@ -56,9 +53,6 @@
         <action
             android:id="@+id/action_to_bookMark"
             app:destination="@id/bookMark" />
-        <action
-            android:id="@+id/fragment_to_home"
-            app:destination="@id/home" />
         <action
             android:id="@+id/action_to_account"
             app:destination="@id/account" />

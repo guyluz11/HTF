@@ -23,7 +23,8 @@ public class Prefs extends BasicPrefsImpl implements IPrefs {
     }
 
     @Override
-    public String getInterest() {
-        return get(KEY_INTEREST, (String) null);
+    public String getInterest(String interests) {
+        return get(KEY_INTEREST, "");
     }
+
 }

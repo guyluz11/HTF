@@ -96,9 +96,6 @@ public class LoginFragment extends HostedFragment<LoginFragmentContract.IPresent
     @Override
     public void goToUserDataScreen() {
         Navigation.findNavController(Objects.requireNonNull(getView())).navigate(R.id.action_login_to_mainScreen);       // Change to Customer menu Screen
-
-
-
         // todo proceed to fill user's interests screen
     }
 }

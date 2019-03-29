@@ -3,9 +3,15 @@ package com.htf.ui.Fragments.main_screen;
 import com.htf.lib.contract.fragment.FragmentContract;
 
 public class HomeFragmentContract {
-    public interface IPresenter extends FragmentContract.IPresenter {}
+    public interface IPresenter extends FragmentContract.IPresenter {
+        boolean goToUserSkills();
+    }
 
     public interface IHost extends FragmentContract.IHost {}
 
-    public interface IView extends FragmentContract.IView {}
+    public interface IView extends FragmentContract.IView { }
+
+
+
+
 }

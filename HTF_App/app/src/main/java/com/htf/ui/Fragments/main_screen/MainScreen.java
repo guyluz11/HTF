@@ -5,23 +5,14 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.navigation.Navigation;
-import androidx.navigation.ui.NavigationUI;
 
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.htf.R;
 import com.htf.lib.v7.fragment.HostedFragment;
-import com.htf.ui.example.fr.example.DaggerExampleFragmentComponent;
-import com.htf.ui.example.fr.example.ExampleFragmentContract;
-import com.htf.ui.example.fr.example.ExampleFragmentModule;
 
 import javax.inject.Inject;
 
@@ -46,12 +37,24 @@ implements HomeFragmentContract.IView {
         DaggerHomeFragmentComponent.builder()
                 .homeFragmentModule(new HomeFragmentModule(this))
                 .build().injectPresenter(this);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
         navigateToInterestsScreen();
     }
 
     private void navigateToInterestsScreen(){
         //todo go to interests screen if this is the first time
-        //if(myView.get)  Navigation.findNavController(fragment).navigate(R.id.action_to_home);
+
+        if(presenter.goToUserSkills()) {
+            System.out.println("there is value to the prefs");
+            // TODO: 29/03/2019 check is this will get fixed after guy push 
+            Navigation.findNavController(fragment).navigate(R.id.action_to_chat);
+
+        }
+
     }
 
     @Override
@@ -78,5 +81,7 @@ implements HomeFragmentContract.IView {
             return true;
         });
     }
+
+
 
 }

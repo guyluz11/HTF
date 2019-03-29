@@ -1,23 +1,10 @@
 package com.htf.ui.Activities;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.htf.R;
-import com.htf.lib.v7.fragment.HostActivity;
-import com.htf.ui.Fragments.login.LoginFragmentContract;
-
 import android.os.Bundle;
 
 import com.htf.R;
-
-import androidx.appcompat.app.AppCompatActivity;
+import com.htf.lib.v7.fragment.HostActivity;
+import com.htf.ui.Fragments.login.LoginFragmentContract;
 
 public class MainActivity extends HostActivity implements LoginFragmentContract.IHost {
 

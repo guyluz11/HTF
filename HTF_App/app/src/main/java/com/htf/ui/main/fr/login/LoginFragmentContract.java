@@ -1,4 +1,4 @@
-package com.htf.ui.Fragments.login;
+package com.htf.ui.main.fr.login;
 
 import com.htf.lib.contract.fragment.FragmentContract;
 

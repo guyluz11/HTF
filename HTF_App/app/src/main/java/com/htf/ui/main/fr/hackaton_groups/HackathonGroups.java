@@ -1,17 +1,16 @@
-package com.htf.ui.Fragments.blank_fragment;
+package com.htf.ui.main.fr.hackaton_groups;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.htf.R;
 
+import androidx.fragment.app.Fragment;
 
-public class BlankFragment extends Fragment {
+
+public class HackathonGroups extends Fragment {
     private View myView;
 
 
@@ -19,7 +18,7 @@ public class BlankFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        myView = inflater.inflate(R.layout.fragment_blank, container, false);
+        myView = inflater.inflate(R.layout.fragment_hackathon_groups, container, false);
         constructViews();
 
         return myView;

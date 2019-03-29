@@ -1,4 +1,4 @@
-package com.htf.ui.Fragments.login;
+package com.htf.ui.main.fr.login;
 
 import android.os.Bundle;
 import android.view.View;
@@ -11,7 +11,6 @@ import com.htf.lib.v7.fragment.HostedFragment;
 import javax.inject.Inject;
 
 import androidx.annotation.Nullable;
-import androidx.navigation.Navigation;
 
 
 public class LoginFragment extends HostedFragment<LoginFragmentContract.IPresenter,

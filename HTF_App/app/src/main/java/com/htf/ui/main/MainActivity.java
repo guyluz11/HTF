@@ -33,8 +33,6 @@ public class MainActivity extends HostActivity<MainContract.IPresenter> implemen
                 .build().injectPresenter(this);
 
         mockData();
-
-
     }
 
     private void mockData() {
@@ -162,5 +160,9 @@ public class MainActivity extends HostActivity<MainContract.IPresenter> implemen
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
 
+    }
 }

@@ -12,7 +12,6 @@ import javax.inject.Inject;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
@@ -25,7 +24,6 @@ public class MainScreen extends HostedFragment<HomeFragmentContract.IPresenter, 
     private BottomNavigationView bottomNavView;
     private Fragment fragment;
 
-
     @Override
     protected int getLayoutResId() {
         return R.layout.fragment_main_screen;
@@ -37,20 +35,6 @@ public class MainScreen extends HostedFragment<HomeFragmentContract.IPresenter, 
         DaggerHomeFragmentComponent.builder()
                 .homeFragmentModule(new HomeFragmentModule(this))
                 .build().injectPresenter(this);
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        navigateToInterestsScreen();
-    }
-
-    private void navigateToInterestsScreen() {
-        if (presenter.goToUserSkills()) {
-            System.out.println("there is value to the prefs");
-            Navigation.findNavController(getView()).navigate(R.id.account);
-        }
-
     }
 
     @Override

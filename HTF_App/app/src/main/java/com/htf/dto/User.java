@@ -51,6 +51,10 @@ public class User {
         mSkills = skills;
     }
 
+    public User(List<String> skills) {
+        mSkills = skills;
+    }
+
     public int getProfession() {
         return profession;
     }

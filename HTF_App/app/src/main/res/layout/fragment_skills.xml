@@ -3,6 +3,89 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.main.fr.skills.SkillsFragment">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ic_backgrond_gradient_02" />
+
+    <TextView
+        android:id="@+id/userNameTextView_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:text="@string/pick_up_skills"
+        android:textColor="@color/textWhite"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/profile_img"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="70dp"
+        app:layout_constraintEnd_toEndOf="@+id/userNameTextView_account"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="@+id/userNameTextView_account"
+        app:layout_constraintTop_toBottomOf="@+id/userNameTextView_account"
+        app:srcCompat="@drawable/def_logo" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/profile_img"
+        app:layout_constraintRight_toRightOf="@+id/profile_img"
+        app:srcCompat="@drawable/leayer_list_edit_button"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="5dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/professions"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="15dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_img" />
+
+    <TextView
+        android:id="@+id/btn_start"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="@string/lbl_start"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:padding="10dp"
+        android:background="@drawable/bg_btn_continue"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

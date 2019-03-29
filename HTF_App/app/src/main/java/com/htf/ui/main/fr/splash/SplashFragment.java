@@ -8,6 +8,7 @@ import com.htf.lib.v7.fragment.HostedFragment;
 import javax.inject.Inject;
 
 import androidx.annotation.Nullable;
+import androidx.navigation.NavOptions;
 import androidx.navigation.fragment.NavHostFragment;
 
 
@@ -42,7 +43,8 @@ public class SplashFragment extends HostedFragment<SplashFragmentContract.IPrese
 
     @Override
     public void proceedToMain() {
-        NavHostFragment.findNavController(this).navigate(R.id.mainScreen);
+        NavHostFragment.findNavController(this).navigate(R.id.mainScreen, null,
+                new NavOptions.Builder().setPopUpTo(R.id.splashFragment2, true).build());
     }
 
     @Override

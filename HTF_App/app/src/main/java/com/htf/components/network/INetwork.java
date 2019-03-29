@@ -34,4 +34,6 @@ public interface INetwork {
     void createGroup(Group group, ICallback<Boolean> callback);
 
     void updateUser(User user, ICallback<Boolean> callback);
+
+    void updateUsersSkills(List<String> skills, ICallback<Boolean> callback);
 }

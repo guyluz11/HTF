@@ -209,4 +209,17 @@ public class NetworkImpl extends BasicNetwork implements INetwork {
                     }
                 });
     }
+
+    @Override
+    public void updateUsersSkills(List<String> skills, ICallback<Boolean> callback) {
+        FirebaseFirestore.getInstance().collection("users")
+                .document(FirebaseAuth.getInstance().getCurrentUser().getUid()).set(new User(skills))
+                .addOnCompleteListener((@NonNull Task<Void> task1) -> {
+                    if (task1.isSuccessful()) {
+                        callback.onResult(new Result<>(true));
+                    } else {
+                        callback.onResult(new Result<>(task1.getException()));
+                    }
+                });
+    }
 }

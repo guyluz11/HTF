@@ -81,7 +81,6 @@ public class LoginFragmentPresenter extends FragmentPresenter<LoginFragmentContr
     }
 
 
-
 }
 
 

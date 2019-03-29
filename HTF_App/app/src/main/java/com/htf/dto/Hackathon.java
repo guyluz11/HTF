@@ -7,6 +7,7 @@ import java.util.List;
  * Not need it for now ...
  */
 public class Hackathon {
+    private String id;
     private String mTitle;
     private String mDescription;
     private List<String> mImagesUrl;

@@ -9,6 +9,7 @@ import java.util.Map;
 
 public class User {
 
+    private int profession;
     private String mId;
     private String mFirstName;
     private String mLastName;
@@ -16,7 +17,9 @@ public class User {
     private Map<String, String> mHackathons;
     private List<String> mSkills;
 
-    public User() {
+    public User(String name, int profession) {
+        mFirstName = name;
+        this.profession = profession;
     }
 
     /**
@@ -32,7 +35,7 @@ public class User {
         addHackathon("115515", "543");
         addHackathon("2", "2432");
         addHackathon("3", "1321");
-        mSkills = new ArrayList<String>();
+        mSkills = new ArrayList<>();
         mSkills.add("skill1");
         mSkills.add("skill2");
     }
@@ -46,6 +49,14 @@ public class User {
         mLastName = lastname;
         mHackathons = new HashMap<>();
         mSkills = skills;
+    }
+
+    public int getProfession() {
+        return profession;
+    }
+
+    public void setProfession(int profession) {
+        this.profession = profession;
     }
 
     /**

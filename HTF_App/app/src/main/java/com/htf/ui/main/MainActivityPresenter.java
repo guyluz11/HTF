@@ -8,4 +8,6 @@ public class MainActivityPresenter extends Presenter<MainContract.IView> impleme
     public MainActivityPresenter(MainContract.IView view, INetwork network) {
         super(view);
     }
+
+
 }

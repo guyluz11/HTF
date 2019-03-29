@@ -14,7 +14,6 @@ import com.htf.ui.main.fr.login.LoginFragmentContract;
 import java.util.ArrayList;
 import java.util.List;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 public class MainActivity extends HostActivity<MainContract.IPresenter> implements MainContract.IView,
@@ -26,8 +25,8 @@ public class MainActivity extends HostActivity<MainContract.IPresenter> implemen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //createNewUserPushToDB();
-        loginUserAndGetUserObject();
+        mockUsers();
+        //loginUserAndGetUserObject();
     }
 
     @Override
@@ -68,31 +67,27 @@ public class MainActivity extends HostActivity<MainContract.IPresenter> implemen
     }
 
     /**
-     * this func used when new user register, its update Auth DB, User DB
+     * this func used when new user register, its update Auth DB, User DB MOCK
      */
-    private void createNewUserPushToDB() {
-        // inject user auth for sign in with email and password push for db
-        /*
-
-
-            registerAuthUser();
-
-
-         */
-
-        // after user logged in we need to push the User object to DB
-
+    private void createNewUserPushToDB(String uid) {
         User user;
         ArrayList<String> skills = new ArrayList<>();
-        skills.add("cdasca");
-        skills.add("cdasca");
-        skills.add("cdasca");
+        skills.add("Developer");
+        skills.add("UX");
+        skills.add("Android");
 
         // the uid key i put is just some key of a user i took from the firebase
-        user = new User("oIxDNGoE9FgtxBGpFDpo2lnM9gK2");
-
-        Injection.getProvider().getNetwork().updateUser(user, result -> {
+        user = new User(uid);
+        Injection.getProvider().getNetwork().addUser(user, result -> {
             System.out.println();
         });
+    }
+
+
+    public void mockUsers() {
+        createNewUserPushToDB("853OejCcg7aUkGKXsefkAOsnSx72");
+        createNewUserPushToDB("853OejCcg7aUkGKXsefkAOsnSx72");
+        createNewUserPushToDB("A1bHZFAaEaOQfnQcBSTYkDkDgzf2");
+        createNewUserPushToDB("C25OKgkxQaUZlAiU5To2GeJ7qB03");
     }
 }

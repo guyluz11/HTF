@@ -16,6 +16,8 @@ import androidx.annotation.NonNull;
 
 public class ProfessionsAdapter extends CommonRecyclerAdapter<Profession> {
 
+    private int selectedProfession = -1;
+
     ProfessionsAdapter(Context context, IOnItemClickListener<Profession> listener) {
         super(context, listener);
     }
@@ -25,6 +27,10 @@ public class ProfessionsAdapter extends CommonRecyclerAdapter<Profession> {
     public CommonViewHolder<Profession> onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         final View v = LayoutInflater.from(context).inflate(R.layout.item_profession, parent, false);
         return new ProfessionVH(v);
+    }
+
+    public int getSelectedProfession() {
+        return selectedProfession;
     }
 
     private class ProfessionVH extends CommonViewHolder<Profession> implements View.OnClickListener {
@@ -49,8 +55,9 @@ public class ProfessionsAdapter extends CommonRecyclerAdapter<Profession> {
         public void onClick(View v) {
             final int position = getAdapterPosition();
             items.get(position).setSelected(true);
-            for(int i = 0; i < getItemCount(); i ++){
-                if(i != position) items.get(i).setSelected(false);
+            selectedProfession = position;
+            for (int i = 0; i < getItemCount(); i++) {
+                if (i != position) items.get(i).setSelected(false);
             }
             notifyDataSetChanged();
         }

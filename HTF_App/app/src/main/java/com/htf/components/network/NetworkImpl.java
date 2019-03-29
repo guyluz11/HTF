@@ -9,12 +9,14 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.htf.R;
+import com.htf.dto.Group;
 import com.htf.dto.Hackathon;
 import com.htf.dto.User;
 import com.htf.lib.result.ICallback;
 import com.htf.lib.result.Result;
 import com.htf.lib.retrofit_support.BasicNetwork;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -75,8 +77,7 @@ public class NetworkImpl extends BasicNetwork implements INetwork {
 
     /**
      * Create new / override current user
-     *
-    @Override
+     */
     public void updateUser(String firstname, String lastname, ArrayList<String> skills, ICallback<Boolean> callback) {
         FirebaseFirestore.getInstance().collection("users").add(new User(firstname, lastname, skills))
                 .addOnCompleteListener((@NonNull Task<DocumentReference> task1) -> {
@@ -92,7 +93,7 @@ public class NetworkImpl extends BasicNetwork implements INetwork {
      * Create new user / override current one
      */
     @Override
-    public void updateUser(User user, ICallback<Boolean> callback) {
+    public void addUser(User user, ICallback<Boolean> callback) {
         FirebaseFirestore.getInstance().collection("users").add(user)
                 .addOnCompleteListener((@NonNull Task<DocumentReference> task1) -> {
                     if (task1.isSuccessful()) {
@@ -128,17 +129,17 @@ public class NetworkImpl extends BasicNetwork implements INetwork {
                 });
     }
 
+
     /**
      * Init User database
      *
-    @Override
-    public void initUserDB() {
-        FirebaseFirestore.getInstance().collection(appCtx.getString(R.string.users_db)).add(new User("123456"))
-                .addOnCompleteListener((@NonNull Task<DocumentReference> task1) -> {
-                    System.out.println();
-                });
-    }*/
-
+     * @Override public void initUserDB() {
+     * FirebaseFirestore.getInstance().collection(appCtx.getString(R.string.users_db)).add(new User("123456"))
+     * .addOnCompleteListener((@NonNull Task<DocumentReference> task1) -> {
+     * System.out.println();
+     * });
+     * }
+     */
 
 
     @Override
@@ -153,4 +154,59 @@ public class NetworkImpl extends BasicNetwork implements INetwork {
                 });
     }
 
+    /**
+     * Create new user / override current one
+     */
+    @Override
+    public void createHackathons(String title, String description, int maxNumberOfGroups, int maxNumberOfPeopleInGroup, ICallback<Boolean> callback) {
+        FirebaseFirestore.getInstance().collection("hackathons")
+                .add(new Hackathon(title, description, maxNumberOfGroups, maxNumberOfPeopleInGroup))
+                .addOnCompleteListener((@NonNull Task<DocumentReference> task1) -> {
+                    if (task1.isSuccessful()) {
+                        callback.onResult(new Result<>(true));
+                    } else {
+                        callback.onResult(new Result<>(false));
+                    }
+                });
+    }
+
+    @Override
+    public void createHackathons(Hackathon hackathon, ICallback<Boolean> callback) {
+        FirebaseFirestore.getInstance().collection("hackathons").add(hackathon)
+                .addOnCompleteListener((@NonNull Task<DocumentReference> task1) -> {
+                    if (task1.isSuccessful()) {
+                        callback.onResult(new Result<>(true));
+                    } else {
+                        callback.onResult(new Result<>(false));
+                    }
+                });
+    }
+
+    @Override
+    public void createGroup(Group group, ICallback<Boolean> callback) {
+        FirebaseFirestore.getInstance().collection("groups").add(group)
+                .addOnCompleteListener((@NonNull Task<DocumentReference> task1) -> {
+                    if (task1.isSuccessful()) {
+                        callback.onResult(new Result<>(true));
+                    } else {
+                        callback.onResult(new Result<>(false));
+                    }
+                });
+    }
+
+    @Override
+    public void updateUser(User user, ICallback<Boolean> callback) {
+        final Map<String, String> params = new HashMap<>();
+        params.put("mFirstName", user.getmFirstName());
+        params.put("profession", String.valueOf(user.getProfession()));
+        FirebaseFirestore.getInstance().collection("users")
+                .document(FirebaseAuth.getInstance().getCurrentUser().getUid()).set(params)
+                .addOnCompleteListener((@NonNull Task<Void> task1) -> {
+                    if (task1.isSuccessful()) {
+                        callback.onResult(new Result<>(true));
+                    } else {
+                        callback.onResult(new Result<>(task1.getException()));
+                    }
+                });
+    }
 }

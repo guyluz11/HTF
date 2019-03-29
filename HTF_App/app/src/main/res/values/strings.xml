@@ -3,4 +3,21 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="error">something went wrong</string>
+    <string name="logged_in">logged in</string>
+    <string name="registered">user registered</string>
+    <string name="empty" />
+    <string name="wait_please">Wait please...</string>
+    <string name="create_account">CREATE NEW ACCOUNT</string>
+    <string name="already_got_account">Already have an account?</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="email">E-mail</string>
+    <string name="enter_your_email">Enter your Email</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="password_is_empty">Password is empty</string>
+    <string name="password_is_short">Password is less than 6 symbols</string>
+    <string name="email_is_empty">Email is empty</string>
+    <string name="email_not_valid">Email not valid</string>
+    <string name="name_is_empty">Name is empty</string>
 </resources>

@@ -20,5 +20,7 @@ public class FragmentContract {
 
     public interface IPresenter {}
 
-    public interface IView extends IProgressContainer, IToast {}
+    public interface IView extends IProgressContainer, IToast {
+        String getString(int strResId);
+    }
 }

@@ -1,11 +1,10 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
 
         <!-- App Font -->
         <item name="android:fontFamily">@font/gidole_regular</item>
-
 
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>

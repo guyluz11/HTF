@@ -7,22 +7,25 @@ package com.htf.lib.result;
 public class Result<T> {
     public final T data;
     public final Throwable error;
+    private final boolean isSuccess;
 
     public Result(T data) {
         this.data = data;
         error = null;
+        isSuccess = true;
     }
 
     public Result(Throwable error) {
         this.error = error;
         data = null;
+        isSuccess = false;
     }
 
     public boolean isFail() {
-        return error != null;
+        return !isSuccess;
     }
 
     public boolean isSuccess() {
-        return error == null;
+        return isSuccess;
     }
 }

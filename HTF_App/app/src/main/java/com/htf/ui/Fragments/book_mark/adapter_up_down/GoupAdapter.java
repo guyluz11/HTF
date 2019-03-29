@@ -41,9 +41,9 @@ public class GoupAdapter extends RecyclerView.Adapter<GoupAdapter.SecondOptionMe
             case 1:
                 view = mInflater.inflate(R.layout.item_view_groups, parent, false);
                 break;
-//            case 2:
-//                view = mInflater.inflate(R.layout.item_view_layout_long_list_menu_layout2, parent, false);
-//                break;
+            case 2:
+                view = mInflater.inflate(R.layout.item_view_users, parent, false);
+                break;
             default:
                 view = mInflater.inflate(R.layout.item_view_groups, parent, false);
                 break;

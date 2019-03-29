@@ -11,32 +11,46 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.htf.R;
+import com.htf.ui.Activities.MainActivity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 
 public class GroupDialogInvite extends Dialog {
     private Button button;
     private TextView exit;
+    Context mContex;
+    Fragment fragment;
 
-    public GroupDialogInvite(@NonNull Context context) {
+
+    public GroupDialogInvite(@NonNull Context context, Fragment fragment) {
         super(context);
+        mContex= context;
+        this.fragment = fragment;
     }
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.invite_dialog);
         closeDialog();
+        doSome();
     }
 
-    private void doSome(){ //\
+    public void doSome(){
         button = findViewById(R.id.viewTeam);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //todo for niv or guy do something when button clicked
+
+//                NavHostFragment.findNavController(fragment).navigate(R.id.action_mainScreen_to_blankFragment);
             }
         });
     }

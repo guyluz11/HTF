@@ -2,6 +2,7 @@ package com.htf.ui.main.fr.main_screen;
 
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -45,8 +46,18 @@ public class MainScreen extends HostedFragment<HomeFragmentContract.IPresenter, 
         super.onStart();
         navigateToInterestsScreen();
 
-        GroupDialogInvite groupDialogInvite = new GroupDialogInvite(getActivity());
-        groupDialogInvite.show();
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                GroupDialogInvite groupDialogInvite = new GroupDialogInvite(getActivity(), fragment);
+                groupDialogInvite.show();
+                groupDialogInvite.doSome();
+
+            }
+        }, 15000);
+
+
 
     }
 

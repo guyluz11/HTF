@@ -8,22 +8,23 @@
 
     <fragment
         android:id="@+id/chat"
-        android:name="com.htf.ui.Fragments.chat.Chat"
+        android:name="com.htf.ui.main.fr.chat.Chat"
         android:label="fragment_chat"
         tools:layout="@layout/fragment_chat" />
     <fragment
         android:id="@+id/account"
-        android:name="com.htf.ui.Fragments.account.Account"
+        android:name="com.htf.ui.main.fr.account.AccountFragment"
         android:label="fragment_account"
         tools:layout="@layout/fragment_account" />
     <fragment
         android:id="@+id/bookMark"
-        android:name="com.htf.ui.Fragments.book_mark.BookMark"
+        android:name="com.htf.ui.main.fr.book_mark.BookMark"
         android:label="fragment_book_mark"
         tools:layout="@layout/fragment_book_mark" />
     <fragment
         android:id="@+id/hackathonGroups"
-        android:name="com.htf.ui.Fragments.hackaton_groups.HackathonGroups"
+        android:name="com.htf.ui.main.fr.hackaton_groups.HackathonGroups"
         android:label="fragment_hackathon_groups"
         tools:layout="@layout/fragment_hackathon_groups" />
+
 </navigation>

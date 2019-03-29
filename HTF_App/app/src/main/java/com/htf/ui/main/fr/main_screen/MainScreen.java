@@ -7,6 +7,7 @@ import android.view.View;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.htf.R;
 import com.htf.lib.v7.fragment.HostedFragment;
+import com.htf.ui.Dialogs.GroupDialogInvite;
 
 import javax.inject.Inject;
 
@@ -43,6 +44,10 @@ public class MainScreen extends HostedFragment<HomeFragmentContract.IPresenter, 
     public void onStart() {
         super.onStart();
         navigateToInterestsScreen();
+
+        GroupDialogInvite groupDialogInvite = new GroupDialogInvite(getActivity());
+        groupDialogInvite.show();
+
     }
 
     private void navigateToInterestsScreen() {

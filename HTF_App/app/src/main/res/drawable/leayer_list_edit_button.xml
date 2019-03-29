@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/backgound_edit_button"/>
+    <item android:drawable="@drawable/edit_button"
+        android:height="10dp"
+        android:width="10dp"
+        android:gravity="center"/>
+
+</layer-list>

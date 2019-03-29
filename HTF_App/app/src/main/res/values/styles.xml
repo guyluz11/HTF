@@ -3,8 +3,6 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
 
-        <!-- App Font -->
-        <item name="android:fontFamily">@font/gidole_regular</item>
 
 
         <!-- Customize your theme here. -->

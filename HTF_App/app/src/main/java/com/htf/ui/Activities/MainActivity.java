@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     private String TAG = "GO";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private void loginUserAndGetUserObject() {
         User user;
         // login user that already exist and ger User Object from database
-        Injection.getProvider().getNetwork().loginUser("nivsaparov@gmail.com","123456789", result -> {
+        Injection.getProvider().getNetwork().loginUser("nivsaparov@gmail.com", "123456789", result -> {
             // get user object
             String id = FirebaseAuth.getInstance().getCurrentUser().getUid();
             Injection.getProvider().getNetwork().getUser(id, (Result<List<User>> result1) -> {
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * this func used when new user register, its update Auth DB, User DB
      */
-    private void createNewUserPushToDB(){
+    private void createNewUserPushToDB() {
         // inject user auth for sign in with email and password push for db
         /*
 

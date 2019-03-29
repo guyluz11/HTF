@@ -33,21 +33,21 @@ public class MainScreen extends Fragment {
         bottomNavView = myView.findViewById(R.id.bottomNavView);
         bottomNavView.setOnNavigationItemSelectedListener((@NonNull MenuItem menuItem) -> {
 
-                switch (menuItem.getItemId()){
-                    case R.id.action_to_home_m:
-                        Navigation.findNavController(fragment).navigate(R.id.action_to_home);       // Change to Customer menu Screen b
-                        break;
-                    case R.id.action_to_chat_m:
-                        Navigation.findNavController(fragment).navigate(R.id.action_to_chat);       // Change to Customer menu Screen
-                        break;
-                     case R.id.action_to_account_m:
-                            Navigation.findNavController(fragment).navigate(R.id.action_to_account);       // Change to Customer menu Screen
-                            break;
-                     case R.id.action_to_bookMark_m:
-                            Navigation.findNavController(fragment).navigate(R.id.action_to_bookMark);       // Change to Customer menu Screen
-                            break;
-                }
-                return true;
+            switch (menuItem.getItemId()) {
+                case R.id.action_to_home_m:
+                    Navigation.findNavController(fragment).navigate(R.id.action_to_home);       // Change to Customer menu Screen b
+                    break;
+                case R.id.action_to_chat_m:
+                    Navigation.findNavController(fragment).navigate(R.id.action_to_chat);       // Change to Customer menu Screen
+                    break;
+                case R.id.action_to_account_m:
+                    Navigation.findNavController(fragment).navigate(R.id.action_to_account);       // Change to Customer menu Screen
+                    break;
+                case R.id.action_to_bookMark_m:
+                    Navigation.findNavController(fragment).navigate(R.id.action_to_bookMark);       // Change to Customer menu Screen
+                    break;
+            }
+            return true;
         });
         return myView;
     }

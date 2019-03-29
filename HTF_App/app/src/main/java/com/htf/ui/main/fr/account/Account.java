@@ -9,7 +9,7 @@ import com.htf.R;
 
 import androidx.fragment.app.Fragment;
 
-public class Account  extends Fragment {
+public class Account extends Fragment {
     private View myView;
 
 

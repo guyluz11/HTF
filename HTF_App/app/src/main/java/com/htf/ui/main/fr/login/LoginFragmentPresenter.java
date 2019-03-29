@@ -53,7 +53,7 @@ public class LoginFragmentPresenter extends FragmentPresenter<LoginFragmentContr
         } else if (!pattern.matcher(username).matches()) {
             result.setEmailValidation(view.getString(R.string.email_not_valid));
         }
-        if(checkFullName && TextUtils.isEmpty(fullName)) {
+        if (checkFullName && TextUtils.isEmpty(fullName)) {
             result.setFullNameValidation(view.getString(R.string.name_is_empty));
         }
         return result;

@@ -21,6 +21,7 @@ public class User {
 
     /**
      * Generate user
+     *
      * @param uid = Firebase.Auth uid of the user
      */
     public User(String uid) {
@@ -28,9 +29,9 @@ public class User {
         mFirstName = "N312321iv";
         mLastName = "Sap412321arov";
         mHackathons = new HashMap<>();
-        addHackathon("115515","543");
-        addHackathon("2","2432");
-        addHackathon("3","1321");
+        addHackathon("115515", "543");
+        addHackathon("2", "2432");
+        addHackathon("3", "1321");
         mSkills = new ArrayList<String>();
         mSkills.add("skill1");
         mSkills.add("skill2");
@@ -49,15 +50,15 @@ public class User {
 
     /**
      * for test only
+     *
      * @param hackathonId
-     * @param groupId
-     * because when user first join an hackathon he will never have also a group
+     * @param groupId     because when user first join an hackathon he will never have also a group
      */
-    public void addHackathon(String hackathonId, String groupId){
+    public void addHackathon(String hackathonId, String groupId) {
         mHackathons.put(hackathonId, groupId);
     }
 
-    public void addHackathon(String hackathonId){
+    public void addHackathon(String hackathonId) {
         mHackathons.put(hackathonId, "");
     }
 

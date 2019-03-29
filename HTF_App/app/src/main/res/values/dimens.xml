@@ -1,1 +1,3 @@
-<resources></resources>
+<resources>
+    <dimen name="pencil_size">14dp</dimen>
+</resources>

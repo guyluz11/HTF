@@ -14,10 +14,10 @@ import com.htf.lib.v7.fragment.HostActivity;
 import com.htf.ui.Fragments.login.LoginFragmentContract;
 
 import android.os.Bundle;
-import android.util.Log;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.htf.R;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends HostActivity implements LoginFragmentContract.IHost {
 
@@ -28,4 +28,5 @@ public class MainActivity extends HostActivity implements LoginFragmentContract.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
 }

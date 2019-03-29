@@ -26,10 +26,6 @@ public class AccountFragment extends RecyclerFragment<AccountFragmentContract.IP
     @Inject
     protected AccountFragmentContract.IPresenter presenter;
 
-    public static AccountFragment newInstance() {
-        return new AccountFragment();
-    }
-
 
     // get layout
     @Override

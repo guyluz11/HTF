@@ -1,4 +1,4 @@
-package com.htf.ui.main.fr.book_mark;
+package com.htf.ui.main.fr;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -18,13 +18,13 @@ import java.util.List;
 
 import androidx.annotation.NonNull;
 
-class BookMarkAdapter extends CommonRecyclerAdapter<Hackathon> {
+public class GlobalAdapter extends CommonRecyclerAdapter<Hackathon> {
     private LayoutInflater mInflater;
     private Context mContext;
     private int layoutNumber;
     private User user;
 
-    BookMarkAdapter(Context context, int layoutNumber, IOnItemClickListener<Hackathon> listener) {
+    public GlobalAdapter(Context context, int layoutNumber, IOnItemClickListener<Hackathon> listener) {
         super(context, listener);
         this.mContext = context;
         this.layoutNumber = layoutNumber;

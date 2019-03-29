@@ -47,5 +47,7 @@ public abstract class HostActivity<PRESENTER extends ActivityContract.IPresenter
         return R.layout.activity_fragment;
     }
 
-    protected abstract Fragment getFirstFragment();
+    protected Fragment getFirstFragment(){
+        return null;
+    }
 }

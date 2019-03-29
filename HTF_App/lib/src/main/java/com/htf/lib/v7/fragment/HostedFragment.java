@@ -99,6 +99,12 @@ public abstract class HostedFragment<PRESENTER extends FragmentContract.IPresent
     }
 
     @Override
+    public void showToast(String msg){
+        final Context ctx = getActivity();
+        if(ctx != null) Toast.makeText(ctx, msg, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
     public void showToast(int msgRes, String query) {
         final Context ctx = getActivity();
         if(ctx != null) Toast.makeText(ctx, getString(msgRes, query), Toast.LENGTH_LONG).show();

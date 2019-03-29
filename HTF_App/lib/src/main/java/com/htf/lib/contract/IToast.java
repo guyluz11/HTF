@@ -8,5 +8,7 @@ public interface IToast {
 
     void showToast(int msgRes);
 
+    void showToast(String msg);
+
     void showToast(int msgRes, String query);
 }

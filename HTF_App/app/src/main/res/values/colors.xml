@@ -8,10 +8,8 @@
     <color name="textMainColour">#FFFFFF</color>
 
     <color name="buttonColor">#FF5548</color>
-
-
-
-
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFF</color>
+    <color name="Login_texts">#000000</color>
+
 </resources>

@@ -53,16 +53,15 @@ public class BookMarkFragment extends RecyclerFragment<BookMarkFragmentContract.
     protected void initViews(View v) {
         recycler = v.findViewById(R.id.recyclerview);
         adapter = getAdapter();
-        recycler.setLayoutManager(new LinearLayoutManager(this.getContext(), RecyclerView.VERTICAL, false));
 
         recycler.setAdapter(adapter);
-        recycler.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
+        recycler.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.VERTICAL, false));
     }
 
     // JUST CREATE THE ADAPTER  FOR RECYCLER
     @Override
     protected CommonRecyclerAdapter<Hackathon> getAdapter() {
-        return new BookMarkAdapter(getActivity(), this);
+        return new BookMarkAdapter(getActivity(),1,this);
     }
 
 
@@ -82,6 +81,13 @@ public class BookMarkFragment extends RecyclerFragment<BookMarkFragmentContract.
     public void setHackatons(List<Hackathon> data) {
         data.add(new Hackathon());
         ArrayList<Hackathon> hackathons = new ArrayList<>();
+        hackathons.add(new Hackathon("title1", "sdedacdsacsad", 15, 10));
+        hackathons.add(new Hackathon("title1", "sdedacdsacsad", 15, 10));
+        hackathons.add(new Hackathon("title1", "sdedacdsacsad", 15, 10));
+        hackathons.add(new Hackathon("title1", "sdedacdsacsad", 15, 10));
+        hackathons.add(new Hackathon("title1", "sdedacdsacsad", 15, 10));
+        hackathons.add(new Hackathon("title1", "sdedacdsacsad", 15, 10));
+        hackathons.add(new Hackathon("title1", "sdedacdsacsad", 15, 10));
         hackathons.add(new Hackathon("title1", "sdedacdsacsad", 15, 10));
         hackathons.add(new Hackathon("title1", "sdedacdsacsad", 15, 10));
         hackathons.add(new Hackathon("title1", "sdedacdsacsad", 15, 10));

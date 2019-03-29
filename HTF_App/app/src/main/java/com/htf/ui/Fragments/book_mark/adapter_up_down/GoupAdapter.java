@@ -39,12 +39,15 @@ public class GoupAdapter extends RecyclerView.Adapter<GoupAdapter.SecondOptionMe
         View view;
         switch (layoutNumber) {
             case 1:
-                view = mInflater.inflate(R.layout.item_view_groups, parent, false);
+                view = mInflater.inflate(R.layout.item_view_hacktons, parent, false);
                 break;
             case 2:
                 view = mInflater.inflate(R.layout.item_view_users, parent, false);
                 break;
             case 3:
+                view = mInflater.inflate(R.layout.item_view_role, parent, false);
+                break;
+            case 4:
                 view = mInflater.inflate(R.layout.item_view_role, parent, false);
                 break;
             default:

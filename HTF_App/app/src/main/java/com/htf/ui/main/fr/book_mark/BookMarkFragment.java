@@ -1,4 +1,4 @@
-package com.htf.ui.main.fr.account;
+package com.htf.ui.main.fr.book_mark;
 
 import android.os.Bundle;
 import android.view.View;
@@ -7,6 +7,7 @@ import com.htf.R;
 import com.htf.dto.Hackathon;
 import com.htf.lib.recycler.CommonRecyclerAdapter;
 import com.htf.lib.v7.fragment.recycler.RecyclerFragment;
+import com.htf.ui.main.fr.GlobalAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,43 +19,50 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-public class AccountFragment extends RecyclerFragment<AccountFragmentContract.IPresenter,
-        AccountFragmentContract.IHost, Hackathon> implements AccountFragmentContract.IView {
+public class BookMarkFragment extends RecyclerFragment<BookMarkFragmentContract.IPresenter,
+        BookMarkFragmentContract.IHost, Hackathon> implements BookMarkFragmentContract.IView {
 
     private RecyclerView recycler;
 
     @Inject
-    protected AccountFragmentContract.IPresenter presenter;
+    protected BookMarkFragmentContract.IPresenter presenter;
+
+    public static BookMarkFragment newInstance() {
+        return new BookMarkFragment();
+    }
 
 
     // get layout
     @Override
     protected int getLayoutResId() {
-        return R.layout.fragment_account;
+        return R.layout.fragment_book_mark;
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        DaggerAccountFragmentComponent.builder()
-                .accountFragmentModule(new AccountFragmentModule(this)).build().injectPresenter(this);
+
+        DaggerBookMarkFragmentComponent.builder()
+                .bookMarkFragmentModule(new BookMarkFragmentModule(this)).build().injectPresenter(this);
+
 
     }
 
     // max method, finds all views by id From HostedFragment
     @Override
     protected void initViews(View v) {
-        recycler = v.findViewById(R.id.recycler_fragmentAccount);
+        recycler = v.findViewById(R.id.recyclerview);
         adapter = getAdapter();
+
         recycler.setAdapter(adapter);
-        recycler.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
+        recycler.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.VERTICAL, false));
     }
 
     // JUST CREATE THE ADAPTER  FOR RECYCLER
     @Override
     protected CommonRecyclerAdapter<Hackathon> getAdapter() {
-        return new AccountAdapter(getActivity(), this);
+        return new GlobalAdapter(getActivity(),1,this);
     }
 
 
@@ -74,6 +82,13 @@ public class AccountFragment extends RecyclerFragment<AccountFragmentContract.IP
     public void setHackatons(List<Hackathon> data) {
         data.add(new Hackathon());
         ArrayList<Hackathon> hackathons = new ArrayList<>();
+        hackathons.add(new Hackathon("title1", "sdedacdsacsad", 15, 10));
+        hackathons.add(new Hackathon("title1", "sdedacdsacsad", 15, 10));
+        hackathons.add(new Hackathon("title1", "sdedacdsacsad", 15, 10));
+        hackathons.add(new Hackathon("title1", "sdedacdsacsad", 15, 10));
+        hackathons.add(new Hackathon("title1", "sdedacdsacsad", 15, 10));
+        hackathons.add(new Hackathon("title1", "sdedacdsacsad", 15, 10));
+        hackathons.add(new Hackathon("title1", "sdedacdsacsad", 15, 10));
         hackathons.add(new Hackathon("title1", "sdedacdsacsad", 15, 10));
         hackathons.add(new Hackathon("title1", "sdedacdsacsad", 15, 10));
         hackathons.add(new Hackathon("title1", "sdedacdsacsad", 15, 10));

@@ -33,4 +33,10 @@
     <string name="designer">Designer</string>
     <string name="product">Product</string>
     <string name="other">Other</string>
+    <string name="you_just_got">You just got</string>
+    <string name="Hacked">Hacked</string>
+    <string name="search_for_other_groups">search for other groups</string>
+    <string name="lynx_want_you_to_be_a_team_member">LYNX want you to be a team member</string>
+    <string name="EXPLORE_TEAM">EXPLORE TEAM</string>
+    <string name="x">X</string>
 </resources>

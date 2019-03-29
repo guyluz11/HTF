@@ -17,14 +17,13 @@
         android:label="fragment_account"
         tools:layout="@layout/fragment_account" />
     <fragment
-        android:id="@+id/bookMark"
-        android:name="com.htf.ui.main.fr.book_mark.BookMark"
-        android:label="fragment_book_mark"
-        tools:layout="@layout/fragment_book_mark" />
-    <fragment
         android:id="@+id/hackathonGroups"
         android:name="com.htf.ui.main.fr.hackaton_groups.HackathonGroups"
         android:label="fragment_hackathon_groups"
         tools:layout="@layout/fragment_hackathon_groups" />
+    <fragment
+        android:id="@+id/bookMarkFragment"
+        android:name="com.htf.ui.main.fr.book_mark.BookMarkFragment"
+        android:label="BookMarkFragment" />
 
 </navigation>

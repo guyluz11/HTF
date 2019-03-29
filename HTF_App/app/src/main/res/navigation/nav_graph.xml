@@ -2,7 +2,8 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph">
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
 
     <fragment
         android:id="@+id/login"
@@ -15,24 +16,17 @@
             app:enterAnim="@anim/nav_default_enter_anim"
             app:popEnterAnim="@anim/nav_default_enter_anim" />
         <action
-            android:id="@+id/action_login_to_createNewAccount"
-            app:destination="@+id/createNewAccount"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:popEnterAnim="@anim/nav_default_enter_anim" />
-        <action
             android:id="@+id/action_login_to_mainScreen"
             app:destination="@id/mainScreen" />
+        <action
+            android:id="@+id/action_login_to_splashFragment"
+            app:destination="@id/splashFragment" />
     </fragment>
     <fragment
         android:id="@+id/forgotPassword"
         android:name="com.htf.ui.main.fr.forgot_password.ForgotPassword"
         android:label="fragment_forgot_password"
         tools:layout="@layout/fragment_forgot_password" />
-    <fragment
-        android:id="@+id/createNewAccount"
-        android:name="com.htf.ui.main.fr.create_new_account.CreateNewAccount"
-        android:label="fragment_create_new_account"
-        tools:layout="@layout/fragment_create_new_account" />
     <fragment
         android:id="@+id/mainScreen"
         android:name="com.htf.ui.main.fr.main_screen.MainScreen"
@@ -50,4 +44,9 @@
             android:id="@+id/action_splashFragment2_to_login"
             app:destination="@id/login" />
     </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.htf.ui.main.fr.splash.SplashFragment"
+        android:label="fragment_profession"
+        tools:layout="@layout/fragment_profession" />
 </navigation>

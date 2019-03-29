@@ -45,7 +45,7 @@
         app:layout_constraintTop_toBottomOf="@+id/userNameTextView_account" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/profile_img"
         android:layout_width="90dp"
         android:layout_height="90dp"
         android:layout_marginTop="12dp"
@@ -68,9 +68,9 @@
         android:id="@+id/imageView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/profile_img"
         app:srcCompat="@drawable/leayer_list_edit_button"
-        app:layout_constraintRight_toRightOf="@+id/imageView" />
+        app:layout_constraintRight_toRightOf="@+id/profile_img" />
 
     <TextView
         android:id="@+id/textView"
@@ -80,7 +80,7 @@
         android:layout_marginTop="30dp"
         android:text="Add short Description"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/profile_img" />
 
     <ImageView
         android:id="@+id/imageView5"

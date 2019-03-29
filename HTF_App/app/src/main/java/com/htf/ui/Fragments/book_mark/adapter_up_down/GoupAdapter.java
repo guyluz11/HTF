@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.htf.R;
 
 import java.util.List;
@@ -22,7 +23,7 @@ public class GoupAdapter extends RecyclerView.Adapter<GoupAdapter.SecondOptionMe
 
 
     // Provide a suitable constructor (depends on the kind of data set)
-    GoupAdapter(Context gettingContext, int layoutNumber, List<String> listFoodObject) {
+    public GoupAdapter(Context gettingContext, int layoutNumber, List<String> listFoodObject) {
         this.mListFoodObject = listFoodObject;
         this.mContext = gettingContext;
         this.layoutNumber = layoutNumber;
@@ -38,13 +39,19 @@ public class GoupAdapter extends RecyclerView.Adapter<GoupAdapter.SecondOptionMe
         View view;
         switch (layoutNumber) {
             case 1:
+                view = mInflater.inflate(R.layout.item_view_hacktons, parent, false);
+                break;
+            case 2:
+                view = mInflater.inflate(R.layout.item_view_users, parent, false);
+                break;
+            case 3:
+                view = mInflater.inflate(R.layout.item_view_role, parent, false);
+                break;
+            case 4:
                 view = mInflater.inflate(R.layout.item_view_groups, parent, false);
                 break;
-//            case 2:
-//                view = mInflater.inflate(R.layout.item_view_layout_long_list_menu_layout2, parent, false);
-//                break;
             default:
-                view = mInflater.inflate(R.layout.item_view_groups, parent, false);
+                view = mInflater.inflate(R.layout.item_view_hacktons, parent, false);
                 break;
         }
         return new SecondOptionMenuHolder(view);
@@ -55,10 +62,10 @@ public class GoupAdapter extends RecyclerView.Adapter<GoupAdapter.SecondOptionMe
     public void onBindViewHolder(SecondOptionMenuHolder holder, int position) {
         // - get element from your data set at this position
         // - replace the contents of the view with that element
-        holder.foodName.setText("sdfs");
-        holder.price.setText("ghhj");
+        holder.foodName.setText(mListFoodObject.get(position));
+//        holder.price.setText("ghhj");
         //loading the images with glide library
-     //   Glide.with(mContext).load(R.drawable.backgound_edit_button).into(holder.imageView);
+//        Glide.with(mContext).load(R.drawable.backgound_edit_button).into(holder.imageView);
 
     }
 
@@ -80,7 +87,7 @@ public class GoupAdapter extends RecyclerView.Adapter<GoupAdapter.SecondOptionMe
 
         SecondOptionMenuHolder(@NonNull View itemView) {
             super(itemView);
-            // foodName = itemView.findViewById(R.id.textView7);
+            foodName = itemView.findViewById(R.id.textView7);
 //            price = itemView.findViewById(R.id.Price_SecondOption);
 //            imageView = itemView.findViewById(R.id.imageView_SecondOption);
         }

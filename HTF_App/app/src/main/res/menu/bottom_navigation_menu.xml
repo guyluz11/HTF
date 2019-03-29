@@ -2,22 +2,22 @@
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
         <item
-            android:id="@+id/action_to_home_m"
+            android:id="@+id/hackathonGroups"
             android:icon="@drawable/ic_baseline_home_24px"
             android:enabled="true"
             android:title="Home" />
         <item
-            android:id="@+id/action_to_chat_m"
+            android:id="@+id/chat"
             android:icon="@drawable/ic_round_chat_24px"
             android:enabled="true"
             android:title="Chat" />
         <item
-            android:id="@+id/action_to_bookMark_m"
+            android:id="@+id/bookMark"
             android:icon="@drawable/ic_round_bookmark_24px"
             android:enabled="true"
             android:title="Bookmark" />
         <item
-            android:id="@+id/action_to_account_m"
+            android:id="@+id/account"
             android:icon="@drawable/ic_round_account_circle_24px"
             android:enabled="true"
             android:title="Account" />

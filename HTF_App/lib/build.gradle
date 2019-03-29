@@ -33,6 +33,6 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:$retrofit_ver"
 
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:my_img.my_img.my_img_t-alpha02'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:my_img_tree.my_img_t.0-alpha02'
+    androidTestImplementation 'androidx.test:runner:1.1.2-alpha02'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0-alpha02'
 }

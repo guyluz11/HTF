@@ -26,5 +26,9 @@
         android:name="com.htf.ui.main.fr.hackaton_groups.HackathonGroups"
         android:label="fragment_hackathon_groups"
         tools:layout="@layout/fragment_hackathon_groups" />
+    <fragment
+        android:id="@+id/bookMarkFragment"
+        android:name="com.htf.ui.main.fr.book_mark.BookMarkFragment"
+        android:label="BookMarkFragment" />
 
 </navigation>

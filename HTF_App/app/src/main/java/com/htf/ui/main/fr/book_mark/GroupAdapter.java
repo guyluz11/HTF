@@ -15,7 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-public class GoupAdapter extends RecyclerView.Adapter<GoupAdapter.SecondOptionMenuHolder> {
+public class GroupAdapter extends RecyclerView.Adapter<GroupAdapter.SecondOptionMenuHolder> {
     private List<String> mListFoodObject;
     private LayoutInflater mInflater;
     private Context mContext;
@@ -23,7 +23,7 @@ public class GoupAdapter extends RecyclerView.Adapter<GoupAdapter.SecondOptionMe
 
 
     // Provide a suitable constructor (depends on the kind of data set)
-    public GoupAdapter(Context gettingContext, int layoutNumber, List<String> listFoodObject) {
+    public GroupAdapter(Context gettingContext, int layoutNumber, List<String> listFoodObject) {
         this.mListFoodObject = listFoodObject;
         this.mContext = gettingContext;
         this.layoutNumber = layoutNumber;
@@ -62,7 +62,7 @@ public class GoupAdapter extends RecyclerView.Adapter<GoupAdapter.SecondOptionMe
     public void onBindViewHolder(SecondOptionMenuHolder holder, int position) {
         // - get element from your data set at this position
         // - replace the contents of the view with that element
-        holder.foodName.setText(mListFoodObject.get(position));
+        holder.name.setText(mListFoodObject.get(position));
 //        holder.price.setText("ghhj");
         //loading the images with glide library
 //        Glide.with(mContext).load(R.drawable.backgound_edit_button).into(holder.imageView);
@@ -81,13 +81,13 @@ public class GoupAdapter extends RecyclerView.Adapter<GoupAdapter.SecondOptionMe
     // you provide access to all the views for a data item in a view holder
     static class SecondOptionMenuHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
-        TextView foodName;
+        TextView name;
         TextView price;
         ImageView imageView;
 
         SecondOptionMenuHolder(@NonNull View itemView) {
             super(itemView);
-            foodName = itemView.findViewById(R.id.textView7);
+            name = itemView.findViewById(R.id.textView7);
 //            price = itemView.findViewById(R.id.Price_SecondOption);
 //            imageView = itemView.findViewById(R.id.imageView_SecondOption);
         }

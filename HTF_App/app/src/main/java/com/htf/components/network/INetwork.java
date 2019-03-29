@@ -31,4 +31,6 @@ public interface INetwork {
     boolean isSignedIn();
 
     void loadHackathons(String userId, ICallback<List<Hackathon>> callback);
+
+
 }

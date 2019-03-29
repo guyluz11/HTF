@@ -1,5 +1,6 @@
 package com.htf.ui.main.fr.login;
 
+import com.htf.components.ComponentProvider;
 import com.htf.components.Injection;
 
 import dagger.Module;
@@ -16,6 +17,7 @@ public class LoginFragmentModule {
 
     @Provides
     public LoginFragmentContract.IPresenter providePresenter() {
-        return new LoginFragmentPresenter(view, Injection.getProvider().getNetwork());
+        final ComponentProvider provider = Injection.getProvider();
+        return new LoginFragmentPresenter(view, provider.getNetwork(), provider.getPrefs());
     }
 }

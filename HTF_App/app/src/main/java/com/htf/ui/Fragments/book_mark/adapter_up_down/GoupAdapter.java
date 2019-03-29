@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.htf.R;
 
 import java.util.List;
@@ -24,7 +23,7 @@ public class GoupAdapter extends RecyclerView.Adapter<GoupAdapter.SecondOptionMe
 
 
     // Provide a suitable constructor (depends on the kind of data set)
-    GoupAdapter(Context gettingContext, int layoutNumber, List<String> listFoodObject) {
+    public GoupAdapter(Context gettingContext, int layoutNumber, List<String> listFoodObject) {
         this.mListFoodObject = listFoodObject;
         this.mContext = gettingContext;
         this.layoutNumber = layoutNumber;
@@ -58,9 +57,9 @@ public class GoupAdapter extends RecyclerView.Adapter<GoupAdapter.SecondOptionMe
         // - get element from your data set at this position
         // - replace the contents of the view with that element
         holder.foodName.setText("sdfs");
-        holder.price.setText("ghhj");
+//        holder.price.setText("ghhj");
         //loading the images with glide library
-        Glide.with(mContext).load(R.drawable.backgound_edit_button).into(holder.imageView);
+//        Glide.with(mContext).load(R.drawable.backgound_edit_button).into(holder.imageView);
 
     }
 

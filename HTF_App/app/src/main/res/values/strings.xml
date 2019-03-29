@@ -20,4 +20,8 @@
     <string name="email_is_empty">Email is empty</string>
     <string name="email_not_valid">Email not valid</string>
     <string name="name_is_empty">Name is empty</string>
+    <string name="skill_1">Developer</string>
+    <string name="skill_2">Graphic Design</string>
+    <style name="skill_3">Advertising</style>
+    <string name="users_db">users</string>
 </resources>

@@ -6,12 +6,24 @@ import com.htf.lib.prefs.BasicPrefsImpl;
 
 public class Prefs extends BasicPrefsImpl implements IPrefs {
 
+    private static final String KEY_INTEREST = "interests";
+
     public Prefs(Context ctx) {
         super(ctx);
     }
 
     @Override
     public String getDefaultPrefsFileName() {
-        return "easy_money";
+        return "hackatons";
+    }
+
+    @Override
+    public void putInterest(String interests) {
+        put(KEY_INTEREST, interests);
+    }
+
+    @Override
+    public String getInterest() {
+        return get(KEY_INTEREST, (String) null);
     }
 }

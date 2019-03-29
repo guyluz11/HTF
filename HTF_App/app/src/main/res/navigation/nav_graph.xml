@@ -38,5 +38,11 @@
         android:id="@+id/mainScreen"
         android:name="com.htf.ui.Fragments.main_screen.MainScreen"
         android:label="fragment_main_screen"
-        tools:layout="@layout/fragment_main_screen" />
+        tools:layout="@layout/fragment_main_screen" >
+        <argument
+            android:name="what screen to go to"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="HOME" />
+    </fragment>
 </navigation>

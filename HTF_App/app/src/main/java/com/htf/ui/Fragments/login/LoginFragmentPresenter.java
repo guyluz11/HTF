@@ -2,11 +2,14 @@ package com.htf.ui.Fragments.login;
 
 import com.htf.R;
 import com.htf.components.network.INetwork;
+import com.htf.components.prefs.IPrefs;
 import com.htf.lib.result.Result;
 import com.htf.lib.v7.fragment.FragmentPresenter;
 import com.htf.util.TextUtils;
 
 import java.util.regex.Pattern;
+
+import androidx.navigation.Navigation;
 
 public class LoginFragmentPresenter extends FragmentPresenter<LoginFragmentContract.IView>
         implements LoginFragmentContract.IPresenter {
@@ -14,10 +17,12 @@ public class LoginFragmentPresenter extends FragmentPresenter<LoginFragmentContr
     private final String regex = "^([_a-zA-Z0-9-]+(\\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*(\\.[a-zA-Z]{1,6}))?$";
     private final Pattern pattern = Pattern.compile(regex);
     private final INetwork network;
+    private final IPrefs prefs;
 
-    public LoginFragmentPresenter(LoginFragmentContract.IView view, INetwork network) {
+    public LoginFragmentPresenter(LoginFragmentContract.IView view, INetwork network, IPrefs prefs) {
         super(view);
         this.network = network;
+        this.prefs = prefs;
     }
 
     @Override
@@ -71,6 +76,7 @@ public class LoginFragmentPresenter extends FragmentPresenter<LoginFragmentContr
             view.hideProgress();
             if (result.isSuccess()) {
                 view.showToast(R.string.registered);
+                prefs.putInterest("interests");
                 view.goToUserDataScreen();
             } else {
                 view.showToast(result.error.getMessage());

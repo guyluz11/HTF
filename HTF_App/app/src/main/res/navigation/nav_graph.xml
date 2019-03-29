@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/splashFragment2">
+    app:startDestination="@id/splashFragment">
 
     <fragment
         android:id="@+id/login"
@@ -21,7 +21,7 @@
             app:destination="@id/mainScreen" />
         <action
             android:id="@+id/action_login_to_splashFragment"
-            app:destination="@id/splashFragment" />
+            app:destination="@+id/fragment_profession" />
 
     </fragment>
 
@@ -36,24 +36,24 @@
         android:label="fragment_main_screen"
         tools:layout="@layout/fragment_main_screen" />
     <fragment
-        android:id="@+id/splashFragment2"
+        android:id="@+id/splashFragment"
         android:name="com.htf.ui.main.fr.splash.SplashFragment"
         android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash" >
+        tools:layout="@layout/fragment_splash">
         <action
             android:id="@+id/action_splashFragment2_to_mainScreen"
             app:destination="@id/mainScreen"
-            app:popUpTo="@+id/splashFragment2"
+            app:popUpTo="@+id/splashFragment"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_splashFragment2_to_login"
             app:destination="@id/login" />
     </fragment>
     <fragment
-        android:id="@+id/splashFragment"
-        android:name="com.htf.ui.main.fr.splash.SplashFragment"
+        android:id="@+id/fragment_profession"
+        android:name="com.htf.ui.main.fr.profession.ProfessionFragment"
         android:label="fragment_profession"
-        tools:layout="@layout/fragment_profession" >
+        tools:layout="@layout/fragment_profession">
         <action
             android:id="@+id/action_splashFragment_to_skillsFragment"
             app:destination="@id/skillsFragment" />
@@ -62,7 +62,7 @@
         android:id="@+id/skillsFragment"
         android:name="com.htf.ui.main.fr.skills.SkillsFragment"
         android:label="fragment_skills"
-        tools:layout="@layout/fragment_skills" >
+        tools:layout="@layout/fragment_skills">
         <action
             android:id="@+id/action_skillsFragment_to_mainScreen"
             app:destination="@id/mainScreen" />

@@ -83,11 +83,11 @@ public class LoginFragment extends HostedFragment<LoginFragmentContract.IPresent
 
     @Override
     public void goToHomeScreen() {
-        Navigation.findNavController(Objects.requireNonNull(getView())).navigate(R.id.action_login_to_mainScreen); // Change to Customer menu Screen
+        Navigation.findNavController(Objects.requireNonNull(getView())).navigate(R.id.action_login_to_mainScreen);
     }
 
     @Override
     public void goToUserDataScreen() {
-        Navigation.findNavController(Objects.requireNonNull(getView())).navigate(R.id.action_login_to_mainScreen);       // Change to Customer menu Screen
+        Navigation.findNavController(Objects.requireNonNull(getView())).navigate(R.id.fragment_profession);
     }
 }

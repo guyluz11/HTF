@@ -48,10 +48,10 @@ public class GoupAdapter extends RecyclerView.Adapter<GoupAdapter.SecondOptionMe
                 view = mInflater.inflate(R.layout.item_view_role, parent, false);
                 break;
             case 4:
-                view = mInflater.inflate(R.layout.item_view_role, parent, false);
+                view = mInflater.inflate(R.layout.item_view_groups, parent, false);
                 break;
             default:
-                view = mInflater.inflate(R.layout.item_view_groups, parent, false);
+                view = mInflater.inflate(R.layout.item_view_hacktons, parent, false);
                 break;
         }
         return new SecondOptionMenuHolder(view);

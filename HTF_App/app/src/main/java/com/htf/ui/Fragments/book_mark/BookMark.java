@@ -61,7 +61,7 @@ public class BookMark  extends Fragment {
         listFoodObject.add("One");
         listFoodObject.add("2");
         listFoodObject.add("Tree");
-        mAdapter = new GoupAdapter(myView.getContext(), 3, listFoodObject);
+        mAdapter = new GoupAdapter(myView.getContext(), 4, listFoodObject);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(myView.getContext(), RecyclerView.VERTICAL, false));
         mRecyclerView.setAdapter(mAdapter);
     }

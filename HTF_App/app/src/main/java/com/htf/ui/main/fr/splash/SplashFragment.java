@@ -8,7 +8,6 @@ import com.htf.lib.v7.fragment.HostedFragment;
 import javax.inject.Inject;
 
 import androidx.annotation.Nullable;
-import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
 

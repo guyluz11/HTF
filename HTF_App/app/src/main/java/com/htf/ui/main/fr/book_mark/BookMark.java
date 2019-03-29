@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.htf.R;
-import com.htf.ui.Fragments.book_mark.adapter_up_down.GoupAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,8 +39,6 @@ public class BookMark extends Fragment {
     private void constructViews() {        // initialize all the variables in an organized way
         mRecyclerView = myView.findViewById(R.id.recyclerview);
     }
-
-
 
 
     //configure the recyclerView with this adapter

@@ -15,7 +15,7 @@ public class SplashFragmentPresenter extends FragmentPresenter<SplashFragmentCon
 
     @Override
     public void checkSignIn() {
-        if(network.isSignedIn()) view.proceedToMain();
+        if (network.isSignedIn()) view.proceedToMain();
         else view.proceedToSignIn();
 
     }

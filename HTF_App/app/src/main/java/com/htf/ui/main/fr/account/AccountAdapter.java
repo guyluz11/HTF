@@ -13,8 +13,6 @@ import com.htf.dto.Hackathon;
 import com.htf.lib.recycler.CommonRecyclerAdapter;
 import com.htf.lib.recycler.CommonViewHolder;
 
-import org.w3c.dom.Text;
-
 import androidx.annotation.NonNull;
 
 class AccountAdapter extends CommonRecyclerAdapter<Hackathon> {
@@ -48,15 +46,15 @@ class AccountAdapter extends CommonRecyclerAdapter<Hackathon> {
         @Override
         public void bindItem(Hackathon item, int position) {
             // fill views from item
-            tvHeadTitle.setText( item.getmTitle());
-            tvSubTitle.setText( item.getmDescription());
+            tvHeadTitle.setText(item.getmTitle());
+            tvSubTitle.setText(item.getmDescription());
             tvLittleTitle.setText(Time.getCurrentTimezone());
         }
 
         @Override
         public void onClick(View view) {
             int position = getAdapterPosition();
-            if(listener != null) listener.onItemClicked(items.get(position), position);
+            if (listener != null) listener.onItemClicked(items.get(position), position);
         }
     }
 }

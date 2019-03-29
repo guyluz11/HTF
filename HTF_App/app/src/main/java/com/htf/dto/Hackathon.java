@@ -5,7 +5,6 @@ import java.util.List;
 
 /**
  * Not need it for now ...
- *
  */
 public class Hackathon {
     private String mTitle;
@@ -15,9 +14,12 @@ public class Hackathon {
     private int mMaxNumberOfPeopleInGroup;
     private List<String> mGroupListId;
 
-    public Hackathon(){};
+    public Hackathon() {
+    }
 
-    public Hackathon(String title, String description,int maxNumberOfGroups, int maxNumberOfPeopleInGroup){
+    ;
+
+    public Hackathon(String title, String description, int maxNumberOfGroups, int maxNumberOfPeopleInGroup) {
         mTitle = title;
         mDescription = description;
         mMaxNumberOfGroups = maxNumberOfGroups;

@@ -1,4 +1,4 @@
-package com.htf.ui.Fragments.main_screen;
+package com.htf.ui.main.fr.main_screen;
 
 import javax.inject.Singleton;
 

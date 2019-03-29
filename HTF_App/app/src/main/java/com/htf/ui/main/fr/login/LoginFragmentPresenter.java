@@ -9,8 +9,6 @@ import com.htf.util.TextUtils;
 
 import java.util.regex.Pattern;
 
-import androidx.navigation.Navigation;
-
 public class LoginFragmentPresenter extends FragmentPresenter<LoginFragmentContract.IView>
         implements LoginFragmentContract.IPresenter {
 

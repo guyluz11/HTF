@@ -71,17 +71,17 @@ public class AccountFragment extends RecyclerFragment<AccountFragmentContract.IP
 
     @Override
     public void onItemClicked(Hackathon item, int position) {
-        if(host != null) host.showHackatonDetails(item);
+        if (host != null) host.showHackatonDetails(item);
     }
 
     @Override
     public void setHackatons(List<Hackathon> data) {
         data.add(new Hackathon());
         ArrayList<Hackathon> hackathons = new ArrayList<>();
-        hackathons.add(new Hackathon("title1","sdedacdsacsad", 15, 10));
-        hackathons.add(new Hackathon("title1","sdedacdsacsad", 15, 10));
-        hackathons.add(new Hackathon("title1","sdedacdsacsad", 15, 10));
-        hackathons.add(new Hackathon("title1","sdedacdsacsad", 15, 10));
+        hackathons.add(new Hackathon("title1", "sdedacdsacsad", 15, 10));
+        hackathons.add(new Hackathon("title1", "sdedacdsacsad", 15, 10));
+        hackathons.add(new Hackathon("title1", "sdedacdsacsad", 15, 10));
+        hackathons.add(new Hackathon("title1", "sdedacdsacsad", 15, 10));
         adapter.setItems(hackathons);
     }
 }

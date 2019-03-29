@@ -20,7 +20,7 @@ public class AccountFragmentPresenter extends FragmentPresenter<AccountFragmentC
     @Override
     public void getHackatons() {
         view.showProgress();
-        network.loadHackathons("cascsa",(Result<List<Hackathon>> result) -> {
+        network.loadHackathons("cascsa", (Result<List<Hackathon>> result) -> {
             view.hideProgress();
             if (result.isFail()) {
 

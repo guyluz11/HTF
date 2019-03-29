@@ -15,11 +15,13 @@ public class Group {
 
     /**
      * Ctor
-     *
-     *  the user which create the hackathon will be the admin, and the first participates
+     * <p>
+     * the user which create the hackathon will be the admin, and the first participates
      */
 
-    public Group(){}
+    public Group() {
+    }
+
     public Group(String title, String description, int maxNumber) {
 
         String idCreator = FirebaseAuth.getInstance().getCurrentUser().getUid();

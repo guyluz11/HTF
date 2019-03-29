@@ -11,6 +11,7 @@ import com.htf.lib.v7.fragment.HostedFragment;
 import javax.inject.Inject;
 
 import androidx.annotation.Nullable;
+import androidx.navigation.fragment.NavHostFragment;
 
 
 public class LoginFragment extends HostedFragment<LoginFragmentContract.IPresenter,
@@ -82,7 +83,7 @@ public class LoginFragment extends HostedFragment<LoginFragmentContract.IPresent
 
     @Override
     public void goToHomeScreen() {
-        // todo proceed to home
+        NavHostFragment.findNavController(this).navigate(R.id.action_login_to_mainScreen);
     }
 
     @Override

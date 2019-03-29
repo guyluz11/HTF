@@ -9,6 +9,7 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.htf.R;
+import com.htf.dto.Hackathon;
 import com.htf.dto.User;
 import com.htf.lib.result.ICallback;
 import com.htf.lib.result.Result;
@@ -142,6 +143,18 @@ public class NetworkImpl extends BasicNetwork implements INetwork {
         FirebaseFirestore.getInstance().collection(appCtx.getString(R.string.users_db)).add(new User("123456"))
                 .addOnCompleteListener((@NonNull Task<DocumentReference> task1) -> {
                     System.out.println();
+                });
+    }
+
+    @Override
+    public void loadHackathons(String userId, ICallback<List<Hackathon>> callback){
+        FirebaseFirestore.getInstance().collection("hackathons").get()
+                .addOnCompleteListener((@NonNull Task<QuerySnapshot> task) -> {
+                   if (task.isSuccessful()){
+                       callback.onResult(new Result<>(task.getResult().toObjects(Hackathon.class)));
+                   }else{
+                       callback.onResult(new Result<>(task.getException()));
+                   }
                 });
     }
 

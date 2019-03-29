@@ -27,7 +27,7 @@ public class LoginFragmentPresenter extends FragmentPresenter<LoginFragmentContr
         if (validation.isInvalid()) return;
 
         view.showProgress();
-        network.loginUser(username, password, (Result<String> result) -> {
+        network.loginUser(username, password, (Result<Boolean> result) -> {
             view.hideProgress();
             if (result.isSuccess()) {
                 //if the string that got passed from the 'NetworkImpl'

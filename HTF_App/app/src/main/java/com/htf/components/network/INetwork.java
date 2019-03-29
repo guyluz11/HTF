@@ -1,5 +1,6 @@
 package com.htf.components.network;
 
+import com.htf.dto.Hackathon;
 import com.htf.dto.User;
 import com.htf.lib.result.ICallback;
 
@@ -28,4 +29,6 @@ public interface INetwork {
 
     //check if the user already signed in
     boolean isSignedIn();
+
+    void loadHackathons(String userId, ICallback<List<Hackathon>> callback);
 }

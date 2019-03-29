@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_margin="6dp">
+
+    <ImageView
+        android:id="@+id/image_itemHackathon"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/hackathon_list_height"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@color/black"/>
+
+    <TextView
+        android:id="@+id/tvHeadTitleAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/image_itemHackathon"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="Big title of the hackathon name"/>
+
+    <TextView
+        android:id="@+id/tvSubTitleAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#757575"
+        android:text="group name"
+        app:layout_constraintTop_toBottomOf="@id/tvHeadTitleAccount"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_littleTitleAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#757575"
+        android:text="take place in tel aviv"
+        app:layout_constraintTop_toBottomOf="@id/tvSubTitleAccount"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

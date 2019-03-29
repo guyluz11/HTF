@@ -28,4 +28,7 @@ public class MainActivity extends HostActivity implements LoginFragmentContract.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
+
+
 }

@@ -49,6 +49,15 @@ public class BookMark  extends Fragment {
         mRecyclerView.setHasFixedSize(true);
         // TODO: 15/02/2019 create adapter for the recyclerView
         List<String> listFoodObject = new ArrayList<>();
+        listFoodObject.add("EUROHACK: The Eurovision Hackathon");
+        listFoodObject.add("2");
+        listFoodObject.add("EUROHACK: The Eurovision Hackathon");
+        listFoodObject.add("One");
+        listFoodObject.add("2");
+        listFoodObject.add("EUROHACK: The Eurovision Hackathon");
+        listFoodObject.add("One");
+        listFoodObject.add("2");
+        listFoodObject.add("Tree");
         listFoodObject.add("One");
         listFoodObject.add("2");
         listFoodObject.add("Tree");

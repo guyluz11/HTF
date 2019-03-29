@@ -9,7 +9,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
-        versionName "my_img.0"
+        versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         // vectorDrawables.useSupportLibrary = true
     }
@@ -34,67 +34,67 @@ dependencies {
 
     // support lib
     implementation "androidx.appcompat:appcompat:$support_ver"
-    implementation 'androidx.legacy:legacy-support-v4:my_img.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     // constraint
-    implementation 'androidx.constraintlayout:constraintlayout:my_img.my_img.my_img_tree'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
     // navigation
-    implementation 'android.arch.navigation:navigation-fragment:my_img.0.0'
-    implementation "android.arch.navigation:navigation-ui:my_img.0.0"
+    implementation 'android.arch.navigation:navigation-fragment:1.0.0'
+    implementation "android.arch.navigation:navigation-ui:1.0.0"
 
     // butterknife
-    implementation 'com.jakewharton:butterknife:10.my_img.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:10.my_img.0'
+    implementation 'com.jakewharton:butterknife:10.1.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
 
     // obfuscation
-    compileOnly 'io.michaelrocks:paranoid-core:0.my_img.7'
+    compileOnly 'io.michaelrocks:paranoid-core:0.1.7'
 
     // rx
-    implementation 'io.reactivex.rxjava2:rxjava:my_img_t.my_img_t.0'
-    implementation 'io.reactivex.rxjava2:rxandroid:my_img_t.my_img.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
 
     // dagger di
-    implementation 'com.google.dagger:dagger:my_img_t.16'
-    annotationProcessor 'com.google.dagger:dagger-compiler:my_img_t.16'
+    implementation 'com.google.dagger:dagger:2.16'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.16'
 
     // firebase core
     implementation 'com.google.firebase:firebase-core:16.0.8'
     // firebase auth with phone
-    implementation "com.google.firebase:firebase-auth:16.my_img_t.0"
+    implementation "com.google.firebase:firebase-auth:16.2.0"
     // firebase icon storage
-    implementation "com.google.firebase:firebase-storage:16.my_img.0"
+    implementation "com.google.firebase:firebase-storage:16.1.0"
     // firebase db
-    implementation "com.google.firebase:firebase-firestore:18.my_img.0"
+    implementation "com.google.firebase:firebase-firestore:18.1.0"
 
     // firebase
     implementation "com.google.firebase:firebase-messaging:17.5.0"
     // firebase invitescompile
-    // implementation "com.google.firebase:firebase-invites:16.my_img.my_img"
+    // implementation "com.google.firebase:firebase-invites:16.1.1"
 
     // firebase real_time presence
-    implementation "com.google.firebase:firebase-database:16.my_img.0"
+    implementation "com.google.firebase:firebase-database:16.1.0"
 
     // firebase for Crashlytics
-    implementation 'com.crashlytics.sdk.android:crashlytics:my_img_t.9.9'
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.9.9'
 
     // country code picker
-    implementation 'com.github.joielechong:countrycodepicker:my_img_t.my_img_t.0'
+    implementation 'com.github.joielechong:countrycodepicker:2.2.0'
 
     // phone validator
     implementation 'io.michaelrocks:libphonenumber-android:8.9.14'
 
     // tests
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:my_img.my_img.my_img_t-alpha02'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:my_img_tree.my_img_t.0-alpha02'
-    implementation 'com.google.android.material:material:my_img.0.0'
-    implementation 'androidx.cardview:cardview:my_img.0.0'
+    androidTestImplementation 'androidx.test:runner:1.1.2-alpha02'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0-alpha02'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
 
     // for glide
 
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
-    implementation 'androidx.recyclerview:recyclerview:my_img.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
 }
 
 // For fire base

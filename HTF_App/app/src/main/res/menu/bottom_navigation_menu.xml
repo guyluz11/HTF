@@ -12,7 +12,7 @@
             android:enabled="true"
             android:title="Chat" />
         <item
-            android:id="@+id/bookMark"
+            android:id="@+id/bookMarkFragment"
             android:icon="@drawable/ic_round_bookmark_24px"
             android:enabled="true"
             android:title="Bookmark" />

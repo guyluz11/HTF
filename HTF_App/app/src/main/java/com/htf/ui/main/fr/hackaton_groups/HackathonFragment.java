@@ -1,4 +1,4 @@
-package com.htf.ui.main.fr.account;
+package com.htf.ui.main.fr.hackaton_groups;
 
 import android.os.Bundle;
 import android.view.View;
@@ -18,13 +18,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-public class AccountFragment extends RecyclerFragment<AccountFragmentContract.IPresenter,
-        AccountFragmentContract.IHost, Hackathon> implements AccountFragmentContract.IView {
+public class HackathonFragment extends RecyclerFragment<HackathonFragmentContract.IPresenter,
+        HackathonFragmentContract.IHost, Hackathon> implements HackathonFragmentContract.IView {
 
     private RecyclerView recycler;
 
     @Inject
-    protected AccountFragmentContract.IPresenter presenter;
+    protected HackathonFragmentContract.IPresenter presenter;
 
 
     // get layout
@@ -37,8 +37,10 @@ public class AccountFragment extends RecyclerFragment<AccountFragmentContract.IP
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        /**
         DaggerAccountFragmentComponent.builder()
-                .accountFragmentModule(new AccountFragmentModule(this)).build().injectPresenter(this);
+                .accountFragmentModule(new HackathonFragmentModule(this)).build().injectPresenter(this);
+         */
 
     }
 
@@ -54,7 +56,7 @@ public class AccountFragment extends RecyclerFragment<AccountFragmentContract.IP
     // JUST CREATE THE ADAPTER  FOR RECYCLER
     @Override
     protected CommonRecyclerAdapter<Hackathon> getAdapter() {
-        return new AccountAdapter(getActivity(), this);
+        return new HackathonAdapter(getActivity(), this);
     }
 
 

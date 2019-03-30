@@ -26,4 +26,17 @@
     <string name="users_db">users</string>
     <string name="app_name_full">Hackatons</string>
     <string name="check_sign_in">Checking sign in...</string>
+    <string name="hint_full_name">Full name</string>
+    <string name="lbl_continue">CONTINUE</string>
+    <string name="welcome_label">Let’s start by getting to know you better</string>
+    <string name="developer">Developer</string>
+    <string name="designer">Designer</string>
+    <string name="product">Product</string>
+    <string name="other">Other</string>
+    <string name="you_just_got">You just got</string>
+    <string name="Hacked">Hacked</string>
+    <string name="search_for_other_groups">search for other groups</string>
+    <string name="lynx_want_you_to_be_a_team_member">LYNX want you to be a team member</string>
+    <string name="EXPLORE_TEAM">EXPLORE TEAM</string>
+    <string name="x">X</string>
 </resources>

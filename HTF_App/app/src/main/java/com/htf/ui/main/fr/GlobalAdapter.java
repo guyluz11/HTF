@@ -53,7 +53,7 @@ public class GlobalAdapter extends CommonRecyclerAdapter<Hackathon> {
             case 2:
                 view = mInflater.inflate(R.layout.item_view_users, parent, false);
                 break;
-            case 3:
+            case img3:
                 view = mInflater.inflate(R.layout.item_view_role, parent, false);
                 break;
             case 4:
@@ -71,20 +71,20 @@ public class GlobalAdapter extends CommonRecyclerAdapter<Hackathon> {
 //        private TextView tvHeadTitle, tvSubTitle, tvLittleTitle;
 //        private ImageView imageHackathon;
 
-        //groups item_view_hacktons 1
+        //groups item_view_hacktons my_img
         ImageView hackatonImage;
         TextView hackatonName;
         TextView hackatonLocation;
         TextView hackatonDate;
         ImageView hackatonBookMark;
 
-        //groups item_view_users 2
+        //groups item_view_users my_img_t
         ImageView userImage;
         TextView userName;
         TextView userRole;
 
 
-        //groups item_view_role 3
+        //groups item_view_role my_img_tree
 //        ImageView userImage;
 //        TextView hackatonRole;
 
@@ -115,7 +115,7 @@ public class GlobalAdapter extends CommonRecyclerAdapter<Hackathon> {
                     userName  = v.findViewById(R.id.userNameTextView_item);
                     userRole  = v.findViewById(R.id.userRoleTextView_item);
                     break;
-                case 3:
+                case img3:
                     userImage = v.findViewById(R.id.userImageImageView_item);
                     userRole  = v.findViewById(R.id.userRoleTextView_item);
                     break;
@@ -142,7 +142,7 @@ public class GlobalAdapter extends CommonRecyclerAdapter<Hackathon> {
 //                    hackatonImage // TODO: Add the image
                     hackatonName.setText(item.getmTitle());
                     hackatonLocation.setText("Tel Aviv");
-                    hackatonDate.setText("29.3.2019");
+                    hackatonDate.setText("29.my_img_tree.2019");
 //                    hackatonBookMark      // TODO: Add the On click
                     break;
                 case 2:
@@ -150,7 +150,7 @@ public class GlobalAdapter extends CommonRecyclerAdapter<Hackathon> {
                     userName.setText(user.getmFirstName() + " " + user.getmLastName());
                     userRole.setText("Designer");
                     break;
-                case 3:
+                case img3:
 //                    userImage = v.findViewById(R.id.userImageImageView_item);      // TODO: Add the image
                     userRole.setText(user.getmFirstName() + " " + user.getmLastName());
                     break;

@@ -2,11 +2,13 @@ package com.htf.ui.main.fr.main_screen;
 
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.htf.R;
 import com.htf.lib.v7.fragment.HostedFragment;
+import com.htf.ui.Dialogs.GroupDialogInvite;
 
 import javax.inject.Inject;
 
@@ -42,14 +44,18 @@ public class MainScreen extends HostedFragment<HomeFragmentContract.IPresenter, 
     @Override
     public void onStart() {
         super.onStart();
-        navigateToInterestsScreen();
-    }
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                GroupDialogInvite groupDialogInvite = new GroupDialogInvite(getActivity(), fragment);
+                groupDialogInvite.show();
+                groupDialogInvite.doSome();
 
-    private void navigateToInterestsScreen() {
-        if (presenter.goToUserSkills()) {
-            System.out.println("there is value to the prefs");
-            Navigation.findNavController(getView()).navigate(R.id.account);
-        }
+            }
+        }, 15000);
+
+
 
     }
 

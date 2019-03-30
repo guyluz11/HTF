@@ -49,6 +49,19 @@ class AccountAdapter extends CommonRecyclerAdapter<Hackathon> {
             tvHeadTitle.setText(item.getmTitle());
             tvSubTitle.setText(item.getmDescription());
             tvLittleTitle.setText(Time.getCurrentTimezone());
+
+//            if(position == 0){
+//                imageHackathon.setImageResource(R.drawable.my_img);
+//            }
+//
+//            if(position == 1){
+//                imageHackathon.setImageResource(R.drawable.my_img_t);
+//            }
+
+//            if(position == 3){
+//                imageHackathon.setImageResource(R.drawable.my_img_tree);
+//            }
+
         }
 
         @Override

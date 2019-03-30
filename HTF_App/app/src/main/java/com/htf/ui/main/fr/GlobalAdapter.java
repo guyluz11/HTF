@@ -53,7 +53,7 @@ public class GlobalAdapter extends CommonRecyclerAdapter<Hackathon> {
             case 2:
                 view = mInflater.inflate(R.layout.item_view_users, parent, false);
                 break;
-            case img3:
+            case 3:
                 view = mInflater.inflate(R.layout.item_view_role, parent, false);
                 break;
             case 4:
@@ -115,7 +115,7 @@ public class GlobalAdapter extends CommonRecyclerAdapter<Hackathon> {
                     userName  = v.findViewById(R.id.userNameTextView_item);
                     userRole  = v.findViewById(R.id.userRoleTextView_item);
                     break;
-                case img3:
+                case 3:
                     userImage = v.findViewById(R.id.userImageImageView_item);
                     userRole  = v.findViewById(R.id.userRoleTextView_item);
                     break;
@@ -150,7 +150,7 @@ public class GlobalAdapter extends CommonRecyclerAdapter<Hackathon> {
                     userName.setText(user.getmFirstName() + " " + user.getmLastName());
                     userRole.setText("Designer");
                     break;
-                case img3:
+                case 3:
 //                    userImage = v.findViewById(R.id.userImageImageView_item);      // TODO: Add the image
                     userRole.setText(user.getmFirstName() + " " + user.getmLastName());
                     break;

@@ -14,7 +14,6 @@ import javax.inject.Inject;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
@@ -26,7 +25,6 @@ public class MainScreen extends HostedFragment<HomeFragmentContract.IPresenter, 
     protected HomeFragmentContract.IPresenter presenter;
     private BottomNavigationView bottomNavView;
     private Fragment fragment;
-
 
     @Override
     protected int getLayoutResId() {
@@ -44,18 +42,14 @@ public class MainScreen extends HostedFragment<HomeFragmentContract.IPresenter, 
     @Override
     public void onStart() {
         super.onStart();
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                GroupDialogInvite groupDialogInvite = new GroupDialogInvite(getActivity(), fragment);
-                groupDialogInvite.show();
-                groupDialogInvite.doSome();
+        navigateToInterestsScreen();
+    }
 
-            }
-        }, 15000);
-
-
+    private void navigateToInterestsScreen() {
+        if (presenter.goToUserSkills()) {
+            System.out.println("there is value to the prefs");
+            Navigation.findNavController(getView()).navigate(R.id.account);
+        }
 
     }
 

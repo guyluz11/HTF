@@ -1,5 +1,7 @@
 package com.htf.ui.main.fr.profession;
 
+import com.htf.components.Injection;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -14,6 +16,6 @@ public class ProfessionFragmentModule {
 
     @Provides
     public ProfessionFragmentContract.IPresenter providePresenter() {
-        return new ProfessionFragmentPresenter(view);
+        return new ProfessionFragmentPresenter(view, Injection.getProvider().getNetwork());
     }
 }

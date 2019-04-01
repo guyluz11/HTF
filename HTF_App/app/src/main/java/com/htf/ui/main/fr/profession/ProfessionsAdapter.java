@@ -4,7 +4,9 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.htf.R;
@@ -15,6 +17,8 @@ import com.htf.lib.recycler.CommonViewHolder;
 import androidx.annotation.NonNull;
 
 public class ProfessionsAdapter extends CommonRecyclerAdapter<Profession> {
+
+    private int selectedProfession = -1;
 
     ProfessionsAdapter(Context context, IOnItemClickListener<Profession> listener) {
         super(context, listener);
@@ -27,9 +31,13 @@ public class ProfessionsAdapter extends CommonRecyclerAdapter<Profession> {
         return new ProfessionVH(v);
     }
 
-    private class ProfessionVH extends CommonViewHolder<Profession> implements View.OnClickListener {
+    public int getSelectedProfession() {
+        return selectedProfession;
+    }
+
+    private class ProfessionVH extends CommonViewHolder<Profession> implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
         private final ImageView logo;
-        private final TextView prof_radio;
+        private final RadioButton prof_radio;
 
         ProfessionVH(View v) {
             super(v);
@@ -42,15 +50,29 @@ public class ProfessionsAdapter extends CommonRecyclerAdapter<Profession> {
         public void bindItem(Profession item, int position) {
             logo.setImageResource(item.getImage());
             prof_radio.setText(item.getName());
-            prof_radio.setSelected(item.getSelected());
+            prof_radio.setOnCheckedChangeListener(null);
+            prof_radio.setChecked(item.getSelected());
+            prof_radio.setOnCheckedChangeListener(this);
         }
 
         @Override
         public void onClick(View v) {
             final int position = getAdapterPosition();
             items.get(position).setSelected(true);
-            for(int i = 0; i < getItemCount(); i ++){
-                if(i != position) items.get(i).setSelected(false);
+            selectedProfession = position;
+            for (int i = 0; i < getItemCount(); i++) {
+                if (i != position) items.get(i).setSelected(false);
+            }
+            notifyDataSetChanged();
+        }
+
+        @Override
+        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+            final int position = getAdapterPosition();
+            items.get(position).setSelected(true);
+            selectedProfession = position;
+            for (int i = 0; i < getItemCount(); i++) {
+                if (i != position) items.get(i).setSelected(false);
             }
             notifyDataSetChanged();
         }

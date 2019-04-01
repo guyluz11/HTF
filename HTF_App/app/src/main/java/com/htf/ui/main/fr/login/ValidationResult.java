@@ -5,7 +5,6 @@ import com.htf.util.TextUtils;
 class ValidationResult {
     private String pwdMsg;
     private String emailMsg;
-    private String nameMsg;
 
     void setPasswordValidation(String msg) {
         pwdMsg = msg;
@@ -25,13 +24,5 @@ class ValidationResult {
 
     String getPasswordMsg() {
         return pwdMsg;
-    }
-
-    void setFullNameValidation(String msg) {
-        nameMsg = msg;
-    }
-
-    String getNameMsg() {
-        return nameMsg;
     }
 }

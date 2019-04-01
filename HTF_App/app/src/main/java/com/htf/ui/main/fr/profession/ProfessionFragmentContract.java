@@ -8,6 +8,8 @@ import java.util.List;
 public class ProfessionFragmentContract {
     public interface IPresenter extends FragmentContract.IPresenter {
         void loadProfessions();
+
+        void updateUser(String name, int profession);
     }
 
     public interface IHost extends FragmentContract.IHost {
@@ -15,5 +17,9 @@ public class ProfessionFragmentContract {
 
     public interface IView extends FragmentContract.IView {
         void setProfessions(List<Profession> profs);
+
+        void goToSkills();
+
+        void setNameError(String error);
     }
 }

@@ -1,5 +1,6 @@
 package com.htf.ui.main.fr;
 
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;

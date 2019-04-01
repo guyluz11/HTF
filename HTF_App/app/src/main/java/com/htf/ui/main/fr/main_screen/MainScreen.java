@@ -27,7 +27,6 @@ public class MainScreen extends HostedFragment<HomeFragmentContract.IPresenter, 
     private BottomNavigationView bottomNavView;
     private Fragment fragment;
 
-
     @Override
     protected int getLayoutResId() {
         return R.layout.fragment_main_screen;
@@ -44,18 +43,14 @@ public class MainScreen extends HostedFragment<HomeFragmentContract.IPresenter, 
     @Override
     public void onStart() {
         super.onStart();
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                GroupDialogInvite groupDialogInvite = new GroupDialogInvite(getActivity(), fragment);
-                groupDialogInvite.show();
-                groupDialogInvite.doSome();
+        navigateToInterestsScreen();
+    }
 
-            }
-        }, 15000);
-
-
+    private void navigateToInterestsScreen() {
+        if (presenter.goToUserSkills()) {
+            System.out.println("there is value to the prefs");
+            Navigation.findNavController(getView()).navigate(R.id.account);
+        }
 
     }
 

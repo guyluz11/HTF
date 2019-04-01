@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Group {
+    private int id = 0;
     private String mTitle;
     private String mDescription;
     private int mMaxNumber;
@@ -24,12 +25,31 @@ public class Group {
 
     public Group(String title, String description, int maxNumber) {
 
+        id = 0;
+        String idCreator = ""; //FirebaseAuth.getInstance().getCurrentUser().getUid();
+        mTitle = title;
+        mDescription = description;
+        mMaxNumber = maxNumber;
+        mWhoIsAdmin = idCreator;
+        mParticipates = new ArrayList<>();
+        mParticipates.add(idCreator);
+        mWaitingList = new ArrayList<>();
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Group(String title, String description, int maxNumber, String s) {
+
         String idCreator = FirebaseAuth.getInstance().getCurrentUser().getUid();
         mTitle = title;
         mDescription = description;
         mMaxNumber = maxNumber;
         mWhoIsAdmin = idCreator;
         mParticipates = new ArrayList<>();
+
+
         mParticipates.add(idCreator);
         mWaitingList = new ArrayList<>();
     }

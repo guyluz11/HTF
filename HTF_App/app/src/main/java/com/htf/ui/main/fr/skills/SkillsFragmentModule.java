@@ -1,5 +1,7 @@
 package com.htf.ui.main.fr.skills;
 
+import com.htf.components.Injection;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -14,6 +16,6 @@ public class SkillsFragmentModule {
 
     @Provides
     public SkillsFragmentContract.IPresenter providePresenter() {
-        return new SkillsFragmentPresenter(view);
+        return new SkillsFragmentPresenter(view, Injection.getProvider().getNetwork());
     }
 }

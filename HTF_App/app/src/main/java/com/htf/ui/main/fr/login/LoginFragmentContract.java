@@ -7,7 +7,8 @@ public class LoginFragmentContract {
     public interface IPresenter extends FragmentContract.IPresenter {
         void login(String username, String password);
 
-        void registerUser(String Email, String password, String fullName);
+        void registerUser(String Email, String password);
+
     }
 
     public interface IHost extends FragmentContract.IHost {

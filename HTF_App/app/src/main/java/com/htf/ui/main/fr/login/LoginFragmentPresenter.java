@@ -25,11 +25,11 @@ public class LoginFragmentPresenter extends FragmentPresenter<LoginFragmentContr
 
     @Override
     public void login(String username, String password) {
-        final ValidationResult validation = validate(username, password, false, "");
+        final ValidationResult validation = validate(username, password);
         view.setValidationResult(validation);
         if (validation.isInvalid()) return;
 
-        view.showProgress();
+        view.showProgress(R.string.empty, R.string.wait_please);
         network.loginUser(username, password, (Result<Boolean> result) -> {
             view.hideProgress();
             if (result.isSuccess()) {
@@ -43,7 +43,7 @@ public class LoginFragmentPresenter extends FragmentPresenter<LoginFragmentContr
         });
     }
 
-    private ValidationResult validate(String username, String password, boolean checkFullName, String fullName) {
+    private ValidationResult validate(String username, String password) {
         final ValidationResult result = new ValidationResult();
         if (TextUtils.isEmpty(password)) {
             result.setPasswordValidation(view.getString(R.string.password_is_empty));
@@ -56,23 +56,21 @@ public class LoginFragmentPresenter extends FragmentPresenter<LoginFragmentContr
         } else if (!pattern.matcher(username).matches()) {
             result.setEmailValidation(view.getString(R.string.email_not_valid));
         }
-        if (checkFullName && TextUtils.isEmpty(fullName)) {
-            result.setFullNameValidation(view.getString(R.string.name_is_empty));
-        }
         return result;
     }
 
     @Override
-    public void registerUser(String username, String password, String fullName) {
+    public void registerUser(String username, String password) {
         //register the user for the first time if he don`t have account
-        final ValidationResult validation = validate(username, password, true, fullName);
+        final ValidationResult validation = validate(username, password);
         view.setValidationResult(validation);
         if (validation.isInvalid()) return;
         //register the user for the first time
         view.showProgress(R.string.empty, R.string.wait_please);
-        network.register(username, password, fullName, (Result<String> result) -> {
+        network.register(username, password, (Result<String> result) -> {
             view.hideProgress();
             if (result.isSuccess()) {
+
                 view.showToast(R.string.registered);
                 prefs.putInterest("interests");
                 view.goToUserDataScreen();
@@ -81,6 +79,8 @@ public class LoginFragmentPresenter extends FragmentPresenter<LoginFragmentContr
             }
         });
     }
+
+
 }
 
 

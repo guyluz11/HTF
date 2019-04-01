@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.htf.R;
-import com.htf.ui.Activities.MainActivity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

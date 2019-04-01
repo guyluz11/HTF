@@ -1,6 +1,7 @@
 package com.htf.ui.main.fr.skills;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.htf.R;
@@ -14,7 +15,9 @@ import java.util.Objects;
 import javax.inject.Inject;
 
 import androidx.annotation.Nullable;
+import androidx.navigation.NavOptions;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -38,6 +41,7 @@ public class SkillsFragment extends HostedFragment<SkillsFragmentContract.IPrese
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         DaggerSkillsFragmentComponent.builder()
                 .skillsFragmentModule(new SkillsFragmentModule(this))
                 .build().injectPresenter(this);
@@ -73,6 +77,8 @@ public class SkillsFragment extends HostedFragment<SkillsFragmentContract.IPrese
 
     @Override
     public void goToMainScreen() {
-        Navigation.findNavController(Objects.requireNonNull(getView())).navigate(R.id.action_skillsFragment_to_mainScreen);
+//        NavHostFragment.findNavController(this).navigate(R.id.login, null,
+//                new NavOptions.Builder().setPopUpTo(R.id.splashFragment, true).build());
+//        Navigation.findNavController(Objects.requireNonNull(getView())).navigate(R.id.action_skillsFragment_to_forgotPassword);
     }
 }

@@ -20,7 +20,7 @@ import androidx.navigation.ui.NavigationUI;
 
 
 public class MainScreen extends HostedFragment<HomeFragmentContract.IPresenter, HomeFragmentContract.IHost>
-        implements HomeFragmentContract.IView {
+        implements HomeFragmentContract.IView, View.OnClickListener{
 
     @Inject
     protected HomeFragmentContract.IPresenter presenter;
@@ -60,5 +60,10 @@ public class MainScreen extends HostedFragment<HomeFragmentContract.IPresenter, 
         fragment = getChildFragmentManager().findFragmentById(R.id.fragmenttt2);
 
         NavigationUI.setupWithNavController(bottomNavView, NavHostFragment.findNavController(fragment));
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }

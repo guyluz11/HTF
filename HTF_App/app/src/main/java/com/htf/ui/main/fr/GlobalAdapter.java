@@ -58,129 +58,19 @@ public class GlobalAdapter extends CommonRecyclerAdapter<Hackathon> {
                 return new Hackaton1VH(view);
             case 2:
                 view = mInflater.inflate(R.layout.item_view_users, parent, false);
-                break;
+                return new Hackaton2VH(view);
             case 3:
                 view = mInflater.inflate(R.layout.item_view_role, parent, false);
-                break;
+                return new Hackaton3VH(view);
             case 4:
                 view = mInflater.inflate(R.layout.item_view_groups, parent, false);
-                break;
+                return new Hackaton4VH(view);
             default:
                 view = mInflater.inflate(R.layout.item_view_hacktons, parent, false);
-                break;
-        }
-        return new HackatonVH(view);
-    }
-
-
-    private class HackatonVH extends CommonViewHolder<Hackathon> implements View.OnClickListener {
-
-//        private TextView tvHeadTitle, tvSubTitle, tvLittleTitle;
-//        private ImageView imageHackathon;
-
-        //groups item_view_hacktons my_img
-        ImageView hackatonImage;
-        TextView hackatonName;
-        TextView hackatonLocation;
-        TextView hackatonDate;
-        ImageView hackatonBookMark;
-
-        //groups item_view_users my_img_t
-        ImageView userImage;
-        TextView userName;
-        TextView userRole;
-
-
-        //groups item_view_role my_img_tree
-//        ImageView userImage;
-//        TextView hackatonRole;
-
-
-        //groups item_view_groups 4
-        ImageView groupImage;
-        TextView groupName;
-        TextView groupDescription;
-        ImageView groupMembersImage;
-        ImageView groupBookMark;
-
-
-
-        public HackatonVH(View v) {
-            super(v);
-            // find views and set listeners
-            itemView.setOnClickListener(this);
-            switch (layoutNumber) {
-                case 1:
-                    hackatonImage = v.findViewById(R.id.hackatonImageImageView_item);
-                    hackatonName  = v.findViewById(R.id.hackatonNameTextView_item);
-                    hackatonLocation  = v.findViewById(R.id.hackatonLocationTextView_item);
-                    hackatonDate  = v.findViewById(R.id.hackatonDateTextView_item);
-                    hackatonBookMark  = v.findViewById(R.id.hackatonBookMarkImageView_item);
-                    break;
-                case 2:
-                    userImage = v.findViewById(R.id.userImageImageView_item);
-                    userName  = v.findViewById(R.id.userNameTextView_item);
-                    userRole  = v.findViewById(R.id.userRoleTextView_item);
-                    break;
-                case 3:
-                    userImage = v.findViewById(R.id.userImageImageView_item);
-                    userRole  = v.findViewById(R.id.userRoleTextView_item);
-                    break;
-                case 4:
-                    groupImage = v.findViewById(R.id.groupImageImageView_item);
-                    groupName  = v.findViewById(R.id.groupNameTextView_item);
-                    groupDescription  = v.findViewById(R.id.groupDescriptionTextView_item);
-                    groupMembersImage  = v.findViewById(R.id.groupMembersImageImageView_item);
-                    groupBookMark  = v.findViewById(R.id.groupBookMarkImageView_item);
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        @Override
-        public void bindItem(Hackathon item, int position) {
-            // fill views from item
-
-            switch (layoutNumber) {
-                case 1:
-//                    hackatonImage // TODO: Add the image
-                    hackatonName.setText(item.getmTitle());
-                    hackatonLocation.setText("Tel Aviv");
-                    hackatonDate.setText("29.my_img_tree.2019");
-//                    hackatonBookMark      // TODO: Add the On click
-                    break;
-                case 2:
-//                    userImage;  // TODO: Add the image
-                    userName.setText(user.getmFirstName() + " " + user.getmLastName());
-                    userRole.setText("Designer");
-                    break;
-                case 3:
-//                    userImage = v.findViewById(R.id.userImageImageView_item);      // TODO: Add the image
-                    userRole.setText(user.getmFirstName() + " " + user.getmLastName());
-                    break;
-                case 4:
-//                    groupImage;        // TODO: Add the image
-                    groupName.setText("LYNX");
-                    groupDescription.setText("A Just Property & Tax System");
-//                    groupMembersImage;        // TODO: Add the image
-//                    groupBookMark   // TODO: Add the On click
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        @Override
-        public void onClick(View view) {
-            int position = getAdapterPosition();
-            if (listener != null) listener.onItemClicked(items.get(position), position);
+                return new Hackaton1VH(view);
         }
     }
 
-    private void populateUser(List<User> data) {
-        user = data.get(0);
-    }
 
     private class Hackaton1VH extends CommonViewHolder<Hackathon> implements View.OnClickListener {
         //groups item_view_hacktons my_img
@@ -216,4 +106,95 @@ public class GlobalAdapter extends CommonRecyclerAdapter<Hackathon> {
             if (listener != null) listener.onItemClicked(items.get(position), position);
         }
     }
+
+    private class Hackaton2VH extends CommonViewHolder<Hackathon> implements View.OnClickListener {
+        //groups item_view_users my_img_t
+        ImageView userImage;
+        TextView userName;
+        TextView userRole;
+
+        public Hackaton2VH(View v) {
+            super(v);
+            userImage = v.findViewById(R.id.userImageImageView_item);
+            userName  = v.findViewById(R.id.userNameTextView_item);
+            userRole  = v.findViewById(R.id.userRoleTextView_item);
+        }
+
+        @Override
+        public void bindItem(Hackathon item, int position) {
+//            userImage;  // TODO: Add the image
+            userName.setText(user.getmFirstName() + " " + user.getmLastName());
+            userRole.setText("Designer");
+        }
+
+        @Override
+        public void onClick(View v) {
+            int position = getAdapterPosition();
+            if (listener != null) listener.onItemClicked(items.get(position), position);
+        }
+
+    }
+
+    private class Hackaton3VH extends CommonViewHolder<Hackathon> implements View.OnClickListener{
+
+        //groups item_view_role my_img_tree
+        ImageView userImage;
+        TextView hackatonRole;
+
+
+    public Hackaton3VH(View v) {
+            super(v);
+
+        userImage = v.findViewById(R.id.userImageImageView_item);
+        hackatonRole  = v.findViewById(R.id.userRoleTextView_item);
+        }
+
+        @Override
+        public void bindItem(Hackathon item, int position) {
+
+//                    userImage = v.findViewById(R.id.userImageImageView_item);      // TODO: Add the image
+            hackatonRole.setText(user.getmFirstName() + " " + user.getmLastName());
+        }
+
+        @Override
+        public void onClick(View v) {
+            int position = getAdapterPosition();
+            if (listener != null) listener.onItemClicked(items.get(position), position);
+        }
+
+    }
+
+    private class Hackaton4VH extends CommonViewHolder<Hackathon> implements View.OnClickListener{
+
+        //groups item_view_groups 4
+        ImageView groupImage;
+        TextView groupName;
+        TextView groupDescription;
+        ImageView groupMembersImage;
+        ImageView groupBookMark;
+        public Hackaton4VH(View v) {
+            super(v);
+            groupImage = v.findViewById(R.id.groupImageImageView_item);
+            groupName  = v.findViewById(R.id.groupNameTextView_item);
+            groupDescription  = v.findViewById(R.id.groupDescriptionTextView_item);
+            groupMembersImage  = v.findViewById(R.id.groupMembersImageImageView_item);
+            groupBookMark  = v.findViewById(R.id.groupBookMarkImageView_item);
+        }
+
+        @Override
+        public void bindItem(Hackathon item, int position) {
+//                    groupImage;        // TODO: Add the image
+            groupName.setText("LYNX");
+            groupDescription.setText("A Just Property & Tax System");
+//                    groupMembersImage;        // TODO: Add the image
+//                    groupBookMark   // TODO: Add the On click
+        }
+
+        @Override
+        public void onClick(View v) {
+            int position = getAdapterPosition();
+            if (listener != null) listener.onItemClicked(items.get(position), position);
+        }
+    }
+
 }

@@ -1,5 +1,6 @@
 package com.htf.ui.main.fr.skills;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.view.View;
 import com.htf.R;
 import com.htf.dto.Skill;
 import com.htf.lib.v7.fragment.HostedFragment;
+import com.htf.ui.main.ac.logged_in__activity.LoggedInActivity;
 import com.htf.ui.main.fr.profession.ProfessionsAdapter;
 
 import java.util.List;
@@ -53,6 +55,7 @@ public class SkillsFragment extends HostedFragment<SkillsFragmentContract.IPrese
         professions.setLayoutManager(new LinearLayoutManager(getActivity()));
         professions.setAdapter(adapter = new SkillsAdapter(getActivity(), null));
         v.findViewById(R.id.btn_start).setOnClickListener(this);
+
     }
 
     @Override
@@ -66,6 +69,8 @@ public class SkillsFragment extends HostedFragment<SkillsFragmentContract.IPrese
         switch (v.getId()){
             case R.id.btn_start: {
                 presenter.updateUsersSkills(adapter.getSelectedSkills());
+
+
             } break;
         }
     }
@@ -77,8 +82,8 @@ public class SkillsFragment extends HostedFragment<SkillsFragmentContract.IPrese
 
     @Override
     public void goToMainScreen() {
-//        NavHostFragment.findNavController(this).navigate(R.id.login, null,
-//                new NavOptions.Builder().setPopUpTo(R.id.splashFragment, true).build());
-//        Navigation.findNavController(Objects.requireNonNull(getView())).navigate(R.id.action_skillsFragment_to_forgotPassword);
+        Intent i = new Intent(getActivity(), LoggedInActivity.class);
+        startActivity(i);
+//        Navigation.findNavController(Objects.requireNonNull(getView())).navigate(R.id.action_skillsFragment_to_mainScreen);
     }
 }

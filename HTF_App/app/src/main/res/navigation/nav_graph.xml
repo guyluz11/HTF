@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/login">
+    app:startDestination="@id/skillsFragment">
 
     <fragment
         android:id="@+id/login"
@@ -17,11 +17,11 @@
             app:enterAnim="@anim/nav_default_enter_anim"
             app:popEnterAnim="@anim/nav_default_enter_anim" />
         <action
-            android:id="@+id/action_login_to_mainScreen"
-            app:destination="@id/mainScreen" />
+            android:id="@+id/action_login_to_fragment_profession"
+            app:destination="@id/fragment_profession" />
         <action
-            android:id="@+id/action_login_to_splashFragment"
-            app:destination="@+id/fragment_profession" />
+            android:id="@+id/action_login_to_placeholder"
+            app:destination="@id/placeholder" />
 
     </fragment>
 
@@ -29,12 +29,11 @@
         android:id="@+id/forgotPassword"
         android:name="com.htf.ui.main.fr.forgot_password.ForgotPassword"
         android:label="fragment_forgot_password"
-        tools:layout="@layout/fragment_forgot_password" />
-    <fragment
-        android:id="@+id/mainScreen"
-        android:name="com.htf.ui.main.fr.main_screen.MainScreen"
-        android:label="fragment_main_screen"
-        tools:layout="@layout/fragment_main_screen" />
+        tools:layout="@layout/fragment_forgot_password" >
+        <action
+            android:id="@+id/action_forgotPassword_to_placeholder"
+            app:destination="@id/placeholder" />
+    </fragment>
     <fragment
         android:id="@+id/fragment_profession"
         android:name="com.htf.ui.main.fr.profession.ProfessionFragment"
@@ -50,8 +49,9 @@
         android:label="fragment_skills"
         tools:layout="@layout/fragment_skills">
         <action
-            android:id="@+id/action_skillsFragment_to_mainScreen"
-            app:destination="@id/mainScreen" />
+            android:id="@+id/action_skillsFragment_to_placeholder"
+            app:destination="@id/placeholder" />
     </fragment>
+    <fragment android:id="@+id/placeholder" />
 
 </navigation>

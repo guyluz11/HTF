@@ -1,12 +1,15 @@
 package com.htf.ui.main.fr.login;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.htf.R;
 import com.htf.lib.v7.fragment.HostedFragment;
+import com.htf.ui.main.ac.logged_in__activity.LoggedInActivity;
 
 import java.util.Objects;
 
@@ -21,6 +24,7 @@ public class LoginFragment extends HostedFragment<LoginFragmentContract.IPresent
 
     private Button loginButton;
     private TextView gotAccount, email, password;
+
 
 
     public static LoginFragment newInstance() {
@@ -51,9 +55,9 @@ public class LoginFragment extends HostedFragment<LoginFragmentContract.IPresent
         email = v.findViewById(R.id.email_textView);
         password = v.findViewById(R.id.password_textView);
 
+
         loginButton.setOnClickListener(this);//Navigation.createNavigateOnClickListener(R.id.action_login_to_mainScreen, null));  // only to change page
         gotAccount.setOnClickListener(this);//Navigation.createNavigateOnClickListener(R.id.action_login_to_mainScreen, null));  // only to change page
-
         // email.setOnClickListener(this);//Navigation.createNavigateOnClickListener(R.id.action_login_to_mainScreen, null));  // only to change page
         // name.setOnClickListener(this);//Navigation.createNavigateOnClickListener(R.id.action_login_to_mainScreen, null));  // only to change page
         // password.setOnClickListener(this);//Navigation.createNavigateOnClickListener(R.id.action_login_to_mainScreen, null));  // only to change page
@@ -66,9 +70,11 @@ public class LoginFragment extends HostedFragment<LoginFragmentContract.IPresent
         if (v == loginButton) {
             //login the user
             presenter.registerUser(getText(email), getText(password));
+
         } else if (v == gotAccount) {
             presenter.login(getText(email), getText(password));
         }
+
     }
 
     private String getText(TextView textView) {
@@ -83,11 +89,12 @@ public class LoginFragment extends HostedFragment<LoginFragmentContract.IPresent
 
     @Override
     public void goToHomeScreen() {
-        Navigation.findNavController(Objects.requireNonNull(getView())).navigate(R.id.action_login_to_mainScreen);
+        Intent i = new Intent(getActivity(), LoggedInActivity.class);
+        startActivity(i);
     }
 
     @Override
     public void goToUserDataScreen() {
-        Navigation.findNavController(Objects.requireNonNull(getView())).navigate(R.id.fragment_profession);
+        Navigation.findNavController(Objects.requireNonNull(getView())).navigate(R.id.action_login_to_fragment_profession);
     }
 }

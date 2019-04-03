@@ -42,6 +42,11 @@ public class GlobalAdapter extends CommonRecyclerAdapter<Hackathon> {
 //        });
     }
 
+    @Override
+    public int getItemViewType(int position) {
+        return layoutNumber;
+    }
+
     @NonNull
     @Override
     public CommonViewHolder<Hackathon> onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -50,7 +55,7 @@ public class GlobalAdapter extends CommonRecyclerAdapter<Hackathon> {
         switch (layoutNumber) {
             case 1:
                 view = mInflater.inflate(R.layout.item_view_hacktons, parent, false);
-                break;
+                return new Hackaton1VH(view);
             case 2:
                 view = mInflater.inflate(R.layout.item_view_users, parent, false);
                 break;
@@ -66,6 +71,7 @@ public class GlobalAdapter extends CommonRecyclerAdapter<Hackathon> {
         }
         return new HackatonVH(view);
     }
+
 
     private class HackatonVH extends CommonViewHolder<Hackathon> implements View.OnClickListener {
 
@@ -136,8 +142,6 @@ public class GlobalAdapter extends CommonRecyclerAdapter<Hackathon> {
         public void bindItem(Hackathon item, int position) {
             // fill views from item
 
-
-
             switch (layoutNumber) {
                 case 1:
 //                    hackatonImage // TODO: Add the image
@@ -178,4 +182,38 @@ public class GlobalAdapter extends CommonRecyclerAdapter<Hackathon> {
         user = data.get(0);
     }
 
+    private class Hackaton1VH extends CommonViewHolder<Hackathon> implements View.OnClickListener {
+        //groups item_view_hacktons my_img
+        ImageView hackatonImage;
+        TextView hackatonName;
+        TextView hackatonLocation;
+        TextView hackatonDate;
+        ImageView hackatonBookMark;
+
+        Hackaton1VH(View v) {
+            super(v);
+            hackatonImage = v.findViewById(R.id.hackatonImageImageView_item);
+            hackatonName  = v.findViewById(R.id.hackatonNameTextView_item);
+            hackatonLocation  = v.findViewById(R.id.hackatonLocationTextView_item);
+            hackatonDate  = v.findViewById(R.id.hackatonDateTextView_item);
+            hackatonBookMark  = v.findViewById(R.id.hackatonBookMarkImageView_item);
+
+            v.setOnClickListener(this);
+        }
+
+        @Override
+        public void bindItem(Hackathon item, int position) {
+//                    hackatonImage // TODO: Add the image
+            hackatonName.setText(item.getmTitle());
+            hackatonLocation.setText("Tel Aviv");
+            hackatonDate.setText("29.my_img_tree.2019");
+//                    hackatonBookMark      // TODO: Add the On click
+        }
+
+        @Override
+        public void onClick(View v) {
+            int position = getAdapterPosition();
+            if (listener != null) listener.onItemClicked(items.get(position), position);
+        }
+    }
 }

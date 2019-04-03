@@ -44,6 +44,7 @@ dependencies {
 
     // butterknife
     implementation 'com.jakewharton:butterknife:10.1.0'
+    implementation 'androidx.appcompat:appcompat:1.0.0-beta01'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
 
     // obfuscation

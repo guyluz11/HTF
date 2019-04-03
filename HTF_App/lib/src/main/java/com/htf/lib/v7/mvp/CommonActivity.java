@@ -1,7 +1,9 @@
 package com.htf.lib.v7.mvp;
 
 import android.annotation.TargetApi;
+import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import com.htf.lib.R;
@@ -25,6 +27,18 @@ public abstract class CommonActivity<PRESENTER extends ActivityContract.IPresent
     private boolean hasProgress = true;
     private boolean onForeground = false;
     private IProgressView progress;
+
+
+    @Override
+    public Context getApplicationContext() {
+        return super.getApplicationContext();
+    }
+
+
+    public CommonActivity() {
+        super();
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

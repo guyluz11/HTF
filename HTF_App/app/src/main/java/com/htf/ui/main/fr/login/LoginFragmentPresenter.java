@@ -66,7 +66,9 @@ public class LoginFragmentPresenter extends FragmentPresenter<LoginFragmentContr
         view.setValidationResult(validation);
         if (validation.isInvalid()) return;
         //register the user for the first time
+
         view.showProgress(R.string.empty, R.string.wait_please);
+
         network.register(username, password, (Result<String> result) -> {
             view.hideProgress();
             if (result.isSuccess()) {

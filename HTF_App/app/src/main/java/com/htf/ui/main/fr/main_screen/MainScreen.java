@@ -3,6 +3,7 @@ package com.htf.ui.main.fr.main_screen;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -20,7 +21,8 @@ import androidx.navigation.ui.NavigationUI;
 
 
 public class MainScreen extends HostedFragment<HomeFragmentContract.IPresenter, HomeFragmentContract.IHost>
-        implements HomeFragmentContract.IView {
+        implements HomeFragmentContract.IView, View.OnClickListener{
+
 
     @Inject
     protected HomeFragmentContract.IPresenter presenter;
@@ -51,7 +53,6 @@ public class MainScreen extends HostedFragment<HomeFragmentContract.IPresenter, 
             System.out.println("there is value to the prefs");
             Navigation.findNavController(getView()).navigate(R.id.account);
         }
-
     }
 
     @Override
@@ -60,5 +61,10 @@ public class MainScreen extends HostedFragment<HomeFragmentContract.IPresenter, 
         fragment = getChildFragmentManager().findFragmentById(R.id.fragmenttt2);
 
         NavigationUI.setupWithNavController(bottomNavView, NavHostFragment.findNavController(fragment));
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }

@@ -1,13 +1,15 @@
-package com.htf.ui.main;
+package com.htf.ui.main.ac.logged_in__activity;
+
 
 import android.os.Bundle;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.htf.R;
 import com.htf.components.Injection;
 import com.htf.dto.Group;
 import com.htf.dto.Hackathon;
 import com.htf.dto.User;
-import com.htf.lib.v7.fragment.HostActivity;
+import com.htf.lib.v7.mvp.CommonActivity;
 import com.htf.ui.main.fr.account.AccountFragmentContract;
 import com.htf.ui.main.fr.login.LoginFragmentContract;
 
@@ -15,24 +17,36 @@ import java.util.ArrayList;
 
 import javax.inject.Inject;
 
-public class MainActivity extends HostActivity<MainContract.IPresenter> implements MainContract.IView,
+import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.NavigationUI;
+
+public class LoggedInActivity extends CommonActivity<LoggedInActivityContract.IPresenter> implements  LoggedInActivityContract.IView,
         LoginFragmentContract.IHost, AccountFragmentContract.IHost {
 
     @Inject
-    public MainContract.IPresenter presenter;
+    public  LoggedInActivityContract.IPresenter presenter;
+    private BottomNavigationView bottomNavView;
+    private Fragment fragment;
 
     @Override
     protected int getLayoutResId() {
-        return R.layout.activity_main;
+        return R.layout.activity_logged_in;
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        DaggerMainActivityComponent.builder().mainActivityModule(new MainActivityModule(this))
-                .build().injectPresenter(this);
+        DaggerLoggedInActivityComponent.builder().loggedInActivityModule(new LoggedInActivityModule(this)).build().injectPresenter(this);
 
-        mockData();
+        fragment = getSupportFragmentManager().findFragmentById(R.id.logged_nev);
+
+        System.out.println("My name is jeffs");
+        // TODO: NOT Doing eny thing
+        Navigation.findNavController(findViewById(R.id.logged_nev)).navigate(R.id.account);
+        bottomNavView = findViewById(R.id.bottomNavView);
+        NavigationUI.setupWithNavController(bottomNavView,  NavHostFragment.findNavController(fragment));
     }
 
     private void mockData() {
@@ -49,9 +63,8 @@ public class MainActivity extends HostActivity<MainContract.IPresenter> implemen
 
         // create 4 groups with 1,2,3,4
         createNewGroupPushToDB("xa");
-
-
     }
+
 
 
     @Override
@@ -159,10 +172,5 @@ public class MainActivity extends HostActivity<MainContract.IPresenter> implemen
             System.out.println();
         });
     }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-
-    }
 }
+

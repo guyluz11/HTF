@@ -12,6 +12,4 @@ public class HomeFragmentContract {
 
     public interface IView extends FragmentContract.IView {
     }
-
-
 }

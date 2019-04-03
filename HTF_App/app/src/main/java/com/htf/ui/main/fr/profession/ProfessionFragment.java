@@ -23,7 +23,11 @@ import androidx.recyclerview.widget.RecyclerView;
 public class ProfessionFragment extends HostedFragment<ProfessionFragmentContract.IPresenter,
         ProfessionFragmentContract.IHost> implements ProfessionFragmentContract.IView, View.OnClickListener {
 
-    @Inject
+
+
+
+
+        @Inject
     protected ProfessionFragmentContract.IPresenter presenter;
     private ImageView photo;
     private ProfessionsAdapter adapter;

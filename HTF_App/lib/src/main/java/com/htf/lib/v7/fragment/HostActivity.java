@@ -1,6 +1,8 @@
 package com.htf.lib.v7.fragment;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.view.View;
 
 import com.htf.lib.R;
@@ -9,6 +11,8 @@ import com.htf.lib.v7.mvp.CommonActivity;
 
 import java.util.List;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 /**
@@ -17,9 +21,14 @@ import androidx.fragment.app.Fragment;
  */
 
 public abstract class HostActivity<PRESENTER extends ActivityContract.IPresenter>
-        extends CommonActivity<PRESENTER> {
+        extends CommonActivity<PRESENTER>  {
 
     protected View container;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +41,7 @@ public abstract class HostActivity<PRESENTER extends ActivityContract.IPresenter
             if(fragments.isEmpty()) addFirstFragment();
             else restoreFragments(fragments);
         }
+
     }
 
     protected void addFirstFragment() {

@@ -25,7 +25,7 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView7"
+        app:layout_constraintStart_toEndOf="@+id/hackatonImageImageView_item"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
